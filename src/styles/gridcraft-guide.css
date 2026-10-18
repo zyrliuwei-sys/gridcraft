@@ -1,0 +1,334 @@
+.gc-article {
+  max-width: 1160px;
+  margin: auto;
+  padding: 32px 36px 75px;
+}
+.gc-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  font-size: 10px;
+  align-items: center;
+  color: var(--gc-muted);
+  margin-bottom: 53px;
+}
+.gc-breadcrumb a:hover {
+  color: var(--gc-text);
+}
+.gc-breadcrumb > span:last-child {
+  color: var(--gc-text);
+}
+.gc-article-header {
+  max-width: 850px;
+  margin: 0 auto 46px;
+  text-align: center;
+}
+.gc-article-meta {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  font-size: 11px;
+  color: var(--gc-muted);
+  margin-bottom: 25px;
+}
+.gc-article-meta span:first-child {
+  color: var(--gc-mint);
+}
+.gc-article-header h1 {
+  font: 400 clamp(42px, 5.2vw, 70px)/1.08 var(--gc-serif);
+  letter-spacing: -1.6px;
+  margin: 0 0 25px;
+  text-wrap: balance;
+}
+.gc-article-header > p {
+  max-width: 610px;
+  margin: 0 auto 25px;
+  color: var(--gc-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+.gc-article-cover {
+  margin: 0 0 65px;
+  border-radius: 10px;
+  background: var(--gc-panel);
+  padding: 30px 30px 0;
+  overflow: hidden;
+  border: 1px solid var(--gc-line);
+}
+.gc-article-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 6px 6px 0 0;
+}
+.gc-article-cover figcaption {
+  font-size: 10px;
+  padding: 14px 0;
+  color: var(--gc-muted);
+}
+.gc-article-layout {
+  display: grid;
+  grid-template-columns: 210px 1fr;
+  gap: 70px;
+  align-items: start;
+}
+.gc-article-aside {
+  position: sticky;
+  top: 30px;
+  font-size: 11px;
+  color: var(--gc-muted);
+}
+.gc-article-aside > p {
+  color: var(--gc-text);
+  margin: 0 0 20px;
+}
+.gc-article-aside nav {
+  display: grid;
+  gap: 17px;
+  border-left: 1px solid var(--gc-line);
+  padding-left: 15px;
+  line-height: 1.6;
+}
+.gc-article-aside > a {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 30px;
+  font-size: 10px;
+}
+.gc-article-aside a:hover {
+  color: var(--gc-mint);
+}
+.gc-article-body {
+  max-width: 690px;
+  min-width: 0;
+}
+.gc-article-body p {
+  color: var(--gc-muted);
+  font-size: 15px;
+  line-height: 1.9;
+  margin: 0 0 25px;
+}
+.gc-article-body .gc-article-lead {
+  color: var(--gc-pearl);
+  font-size: 18px;
+  line-height: 1.8;
+}
+.gc-article-body section {
+  scroll-margin-top: 30px;
+  margin-top: 45px;
+}
+.gc-article-body h2 {
+  font: 400 36px/1.15 var(--gc-serif);
+  letter-spacing: -0.6px;
+  margin: 0 0 24px;
+}
+.gc-article-steps {
+  padding-left: 22px;
+  display: grid;
+  gap: 20px;
+  font-size: 14px;
+  line-height: 1.9;
+  color: var(--gc-text);
+}
+.gc-article-steps li {
+  padding-left: 8px;
+}
+.gc-article-steps li::marker {
+  color: var(--gc-mint);
+  font-size: 11px;
+}
+.gc-code-example {
+  margin: 30px 0 0;
+  background: var(--gc-panel);
+  border: 1px solid var(--gc-line);
+  border-radius: var(--gc-radius);
+  overflow: hidden;
+}
+.gc-code-example pre {
+  overflow: auto;
+  padding: 28px;
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.9;
+  color: var(--gc-mint);
+  tab-size: 2;
+}
+.gc-code-example figcaption {
+  padding: 14px 22px;
+  border-top: 1px solid var(--gc-line);
+  font-size: 10px;
+  color: var(--gc-muted);
+  line-height: 1.7;
+}
+.gc-article-body .gc-article-note {
+  padding: 20px 22px;
+  border-left: 2px solid var(--gc-mint);
+  background: var(--gc-panel);
+  font-size: 12px;
+}
+.gc-article-source {
+  border-top: 1px solid var(--gc-line);
+  padding-top: 23px;
+  display: grid;
+  gap: 12px;
+  font-size: 10px;
+  color: var(--gc-muted);
+}
+.gc-article-source a {
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  color: var(--gc-text);
+}
+.gc-related {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 50px 36px 80px;
+  border-top: 1px solid var(--gc-line);
+}
+.gc-related h2 {
+  font: 400 42px/1.1 var(--gc-serif);
+  margin: 0 0 30px;
+}
+.gc-related > div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 25px;
+}
+.gc-related > div > a {
+  position: relative;
+  border: 1px solid var(--gc-line);
+  border-radius: var(--gc-radius);
+  padding: 30px;
+  transition: background 0.18s;
+}
+.gc-related > div > a:hover {
+  background: var(--gc-panel);
+}
+.gc-related span {
+  font-size: 10px;
+  color: var(--gc-mint);
+}
+.gc-related h3 {
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 85%;
+  letter-spacing: -0.3px;
+  margin-top: 17px;
+}
+.gc-related svg {
+  position: absolute;
+  right: 24px;
+  bottom: 28px;
+  color: var(--gc-muted);
+}
+@media (max-width: 800px) {
+  .gc-article-layout {
+    grid-template-columns: 160px 1fr;
+    gap: 35px;
+  }
+  .gc-article {
+    padding-inline: 28px;
+  }
+  .gc-article-cover {
+    padding: 20px 20px 0;
+  }
+  .gc-article-header h1 {
+    font-size: 54px;
+  }
+  .gc-article-body p {
+    font-size: 14px;
+  }
+  .gc-related h3 {
+    font-size: 17px;
+  }
+}
+@media (max-width: 600px) {
+  .gc-article {
+    padding: 24px 24px 50px;
+  }
+  .gc-breadcrumb {
+    margin-bottom: 37px;
+    font-size: 9px;
+  }
+  .gc-article-header {
+    margin-bottom: 32px;
+    text-align: left;
+  }
+  .gc-article-meta {
+    justify-content: flex-start;
+    font-size: 10px;
+    margin-bottom: 19px;
+  }
+  .gc-article-header h1 {
+    font-size: 43px;
+    letter-spacing: -1px;
+  }
+  .gc-article-header > p {
+    font-size: 13px;
+  }
+  .gc-article-cover {
+    padding: 12px 12px 0;
+    margin-bottom: 30px;
+  }
+  .gc-article-cover img {
+    max-height: 280px;
+  }
+  .gc-article-cover figcaption {
+    font-size: 8px;
+    line-height: 1.7;
+  }
+  .gc-article-layout {
+    display: block;
+  }
+  .gc-article-aside {
+    position: static;
+    margin-bottom: 35px;
+  }
+  .gc-article-aside > p {
+    margin-bottom: 13px;
+  }
+  .gc-article-aside nav {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    font-size: 10px;
+  }
+  .gc-article-aside > a {
+    display: none;
+  }
+  .gc-article-body .gc-article-lead {
+    font-size: 17px;
+  }
+  .gc-article-body p {
+    font-size: 13px;
+  }
+  .gc-article-body h2 {
+    font-size: 31px;
+  }
+  .gc-article-steps {
+    font-size: 13px;
+  }
+  .gc-code-example pre {
+    padding: 20px;
+    font-size: 10px;
+  }
+  .gc-related {
+    padding: 36px 24px 55px;
+  }
+  .gc-related h2 {
+    font-size: 35px;
+  }
+  .gc-related > div {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .gc-related > div > a {
+    padding: 25px;
+  }
+}

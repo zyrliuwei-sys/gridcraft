@@ -11,7 +11,7 @@ import {
 } from '@tanstack/react-router';
 import { createServerFn } from '@tanstack/react-start';
 import dmSansLatinUrl from '@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2?url';
-import bebasLatinUrl from '@fontsource/bebas-neue/files/bebas-neue-latin-400-normal.woff2?url';
+import serifLatinUrl from '@fontsource/instrument-serif/files/instrument-serif-latin-400-normal.woff2?url';
 import { ThemeProvider } from 'next-themes';
 
 import { envConfigs } from '@/config';
@@ -29,6 +29,8 @@ import { SandboxPreviewBridge } from '@/components/sandbox-preview-bridge';
 import { Toaster } from '@/components/ui/sonner';
 
 import '@/styles/fonts.css';
+import '@fontsource/instrument-serif/400.css';
+import '@fontsource/instrument-serif/400-italic.css';
 import '@/styles/globals.css';
 
 // Analytics IDs live in the DB config (1h-cached service). Fetched via a
@@ -74,7 +76,7 @@ export const Route = createRootRoute({
           rel: 'preload',
           as: 'font',
           type: 'font/woff2',
-          href: bebasLatinUrl,
+          href: serifLatinUrl,
           crossOrigin: 'anonymous',
         },
         {

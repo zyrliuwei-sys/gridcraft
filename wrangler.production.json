@@ -14,8 +14,8 @@
   "d1_databases": [
     {
       "binding": "DB",
-      "database_name": "hotel-lobby-db",
-      "database_id": "9c9d279e-2929-4b38-9d0f-0259fb6a96dd",
+      "database_name": "gridcraft",
+      "database_id": "3ed52391-be84-4632-a0eb-9c0a854b7c85",
       "migrations_dir": "drizzle"
     }
   ],

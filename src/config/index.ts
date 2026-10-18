@@ -15,9 +15,11 @@ const publicEnv = (key: string) => metaEnv[key] ?? procEnv[key];
 
 export const envConfigs: Record<string, string> = {
   // App (public)
-  app_url: publicEnv('VITE_APP_URL') ?? 'http://localhost:3000',
-  app_name: publicEnv('VITE_APP_NAME') ?? 'ShipAny',
-  app_description: publicEnv('VITE_APP_DESCRIPTION') ?? 'Ship your SaaS faster',
+  app_url: publicEnv('VITE_APP_URL') ?? 'https://gridcraft.me',
+  app_name: publicEnv('VITE_APP_NAME') ?? 'gridcraft',
+  app_description:
+    publicEnv('VITE_APP_DESCRIPTION') ??
+    'GridCraft downloads, installation guides, Microsoft Excel feature comparisons and hands-on reviews.',
   app_logo: publicEnv('VITE_APP_LOGO') ?? '/logo.svg',
 
   // Database
