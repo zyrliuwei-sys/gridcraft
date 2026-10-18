@@ -1,15 +1,19 @@
 import { useState } from 'react';
 import { ArrowUp, ArrowUpRight, Menu, X } from 'lucide-react';
 
+import { useSession } from '@/core/auth/client';
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
 import { m } from '@/paraglide/messages.js';
+import { SiteUserMenu } from '@/components/site-user-menu';
 
 import '@/styles/gridcraft-home.css';
 import '@/styles/gridcraft-footer.css';
 
 export function GridcraftHeader({ home = false }: { home?: boolean }) {
   const [open, setOpen] = useState(false);
+  const { data: session, isPending } = useSession();
+  const user = session?.user;
   const items = [
     { hash: 'features', label: m['gc.home.nav.product']() },
     { hash: 'learn', label: m['gc.home.nav.learn']() },
@@ -38,9 +42,25 @@ export function GridcraftHeader({ home = false }: { home?: boolean }) {
         ))}
       </nav>
       <div className="gc-header-actions">
-        <Link href="/sign-in" className="gc-login">
-          {m['common.sign.sign_in_title']()}
-        </Link>
+        {user ? (
+          <SiteUserMenu
+            name={user.name || user.email}
+            email={user.email}
+            image={user.image}
+            showName
+            triggerClassName="gc-account-trigger"
+          />
+        ) : isPending ? (
+          <span
+            className="gc-account-loading"
+            role="status"
+            aria-label={m['settings.profile.loading']()}
+          />
+        ) : (
+          <Link href="/sign-in" className="gc-login">
+            {m['common.sign.sign_in_title']()}
+          </Link>
+        )}
         <Link href="/editor" className="gc-nav-cta">
           {m['gc.home.start']()}
           <ArrowUpRight size={15} />

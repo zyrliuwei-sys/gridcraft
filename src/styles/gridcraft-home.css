@@ -89,6 +89,44 @@
 .gc-login:hover {
   color: var(--gc-text);
 }
+.gc-account-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 4px 9px 4px 4px;
+  border: 1px solid var(--gc-line);
+  color: var(--gc-text);
+  background: var(--gc-surface, var(--gc-bg));
+  font-size: 12px;
+}
+.gc-account-trigger:hover,
+.gc-account-trigger[data-popup-open] {
+  border-color: var(--gc-mint);
+}
+.gc-account-name {
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.gc-account-loading {
+  display: block;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--gc-line);
+  border-radius: 50%;
+  background: var(--gc-line);
+}
+@media (max-width: 767px) {
+  .gc-account-trigger {
+    padding: 4px;
+  }
+  .gc-account-trigger .gc-account-name,
+  .gc-account-trigger > svg {
+    display: none;
+  }
+}
 .gc-login:focus-visible {
   outline: 2px solid var(--gc-mint);
   outline-offset: 4px;
