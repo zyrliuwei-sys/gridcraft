@@ -1,13 +1,15 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "hotel-lobby-ai",
+  "name": "gridcraft",
   "compatibility_flags": ["nodejs_compat"],
-  "observability": { "enabled": true },
+  "observability": {
+    "enabled": true
+  },
   "vars": {
     "DATABASE_PROVIDER": "d1",
-    "VITE_APP_URL": "https://hotel-lobby.org",
-    "VITE_APP_NAME": "Hotel Lobby AI",
-    "VITE_APP_DESCRIPTION": "Plan a two-person Hotel Lobby AI filter video and copy a prompt for an image-to-video studio.",
+    "VITE_APP_URL": "https://gridcraft.me",
+    "VITE_APP_NAME": "gridcraft",
+    "VITE_APP_DESCRIPTION": "GridCraft ArtCraft spreadsheet editor, official downloads and practical XLSX guides.",
     "VITE_APP_LOGO": "/logo.svg",
     "VITE_DEFAULT_LOCALE": "en"
   },
@@ -19,6 +21,12 @@
       "migrations_dir": "drizzle"
     }
   ],
-  "triggers": { "crons": ["* * * * *"] },
-  "routes": [{ "pattern": "hotel-lobby.org", "custom_domain": true }]
+  "routes": [
+    {
+      "pattern": "gridcraft.me",
+      "custom_domain": true
+    }
+  ],
+  "account_id": "d7c3d8fa2229ed65b03fd28fc8659989",
+  "compatibility_date": "2026-10-18"
 }
