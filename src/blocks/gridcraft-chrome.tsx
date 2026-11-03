@@ -5,6 +5,7 @@ import { useSession } from '@/core/auth/client';
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
 import { m } from '@/paraglide/messages.js';
+import { FooterBadgeList } from '@/components/footer-badge-list';
 import { SiteUserMenu } from '@/components/site-user-menu';
 
 import '@/styles/gridcraft-home.css';
@@ -142,6 +143,7 @@ export function GridcraftFooter() {
           </a>
         </nav>
       </div>
+      <FooterBadgeList className="my-8" />
       <div className="gc-footer-bottom">
         <div className="gc-footer-disclosure">
           <span>
