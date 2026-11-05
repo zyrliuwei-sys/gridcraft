@@ -11,11 +11,13 @@ import {
 
 import { Link } from '@/core/i18n/navigation';
 import { m } from '@/paraglide/messages.js';
+import { getGridcraftSearchGuideCards } from '@/blocks/gridcraft-search-guide-content';
 
 import '@/styles/gridcraft-resources.css';
 
 type Guide = {
   id: string;
+  slug: string;
   category: string;
   title: string;
   description: string;
@@ -28,16 +30,20 @@ const releaseBase =
   'https://github.com/storytold/gridcraft/releases/download/v0.7.0/';
 
 function GuideCard({ guide }: { guide: Guide }) {
-  const slug =
-    guide.id === 'start'
-      ? 'getting-started'
-      : guide.id === 'analysis'
-        ? 'charts-and-pivots'
-        : 'formulas';
   return (
-    <Link className={`gc-guide gc-guide-${guide.id}`} href={`/guides/${slug}`}>
+    <Link
+      className={`gc-guide gc-guide-${guide.id}`}
+      href={`/guides/${guide.slug}`}
+    >
       <div className="gc-guide-image">
-        <img loading="lazy" src={guide.image} alt={guide.title} />
+        <img
+          loading="lazy"
+          decoding="async"
+          width="1600"
+          height="1000"
+          src={guide.image}
+          alt={guide.title}
+        />
         <span className="gc-guide-open">
           <ArrowUpRight size={20} />
         </span>
@@ -64,6 +70,7 @@ export function GridcraftResources() {
   const guides: Guide[] = [
     {
       id: 'start',
+      slug: 'getting-started',
       category: 'start',
       tag: m['gc.resources.guide.start.tag'](),
       time: m['gc.resources.guide.start.time'](),
@@ -73,6 +80,7 @@ export function GridcraftResources() {
     },
     {
       id: 'formulas',
+      slug: 'formulas',
       category: 'formulas',
       tag: m['gc.resources.guide.formulas.tag'](),
       time: m['gc.resources.guide.formulas.time'](),
@@ -82,6 +90,7 @@ export function GridcraftResources() {
     },
     {
       id: 'analysis',
+      slug: 'charts-and-pivots',
       category: 'analysis',
       tag: m['gc.resources.guide.analysis.tag'](),
       time: m['gc.resources.guide.analysis.time'](),
@@ -90,6 +99,10 @@ export function GridcraftResources() {
       image: '/imgs/gridcraft/pivot.webp',
     },
   ];
+  const featuredGuides = getGridcraftSearchGuideCards().map((guide) => ({
+    ...guide,
+    image: `/imgs/gridcraft/${guide.image}.webp`,
+  }));
   const filters = [
     { id: 'all', label: m['gc.resources.filter.all']() },
     { id: 'start', label: m['gc.resources.filter.start']() },
@@ -263,6 +276,17 @@ export function GridcraftResources() {
             </div>
             <p>{m['gc.resources.learn.description']()}</p>
           </div>
+          <h3 className="gc-learn-subheading">
+            {m['gc.resources.learn.featured']()}
+          </h3>
+          <div className="gc-guides gc-guides-featured">
+            {featuredGuides.map((guide) => (
+              <GuideCard key={guide.slug} guide={guide} />
+            ))}
+          </div>
+          <h3 className="gc-learn-subheading gc-learn-practical">
+            {m['gc.resources.learn.practical']()}
+          </h3>
           <div
             className="gc-guide-filters"
             role="group"
@@ -346,6 +370,13 @@ export function GridcraftResources() {
           </div>
           <div className="gc-compare-sources">
             <p>{m['gc.resources.compare.note']()}</p>
+            <Link
+              className="gc-resource-textlink"
+              href="/guides/gridcraft-vs-excel"
+            >
+              {m['gc.resources.compare.full_guide']()}
+              <ArrowRight size={15} />
+            </Link>
             <div>
               <a
                 href="https://github.com/storytold/gridcraft"
@@ -382,6 +413,13 @@ export function GridcraftResources() {
               <p className="gc-section-intro">
                 {m['gc.resources.download.description']()}
               </p>
+              <Link
+                className="gc-resource-textlink"
+                href="/guides/what-is-gridcraft#choose-version"
+              >
+                {m['gc.resources.download.choose_guide']()}
+                <ArrowRight size={15} />
+              </Link>
               <div className="gc-download-art">
                 <img
                   loading="lazy"

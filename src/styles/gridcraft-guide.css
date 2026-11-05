@@ -47,6 +47,110 @@
   font-size: 15px;
   line-height: 1.8;
 }
+.gc-article-header > .gc-article-updated {
+  font-size: 11px;
+  margin-bottom: 20px;
+}
+.gc-article-figure {
+  margin: 30px 0;
+  border: 1px solid var(--gc-line);
+  background: var(--gc-panel);
+  border-radius: var(--gc-radius);
+  overflow: hidden;
+}
+.gc-article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.gc-article-figure figcaption {
+  color: var(--gc-muted);
+  padding: 15px 20px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+.gc-article-table-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--gc-line);
+  border-radius: var(--gc-radius);
+  margin-block: 28px;
+}
+.gc-article-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 490px;
+  font-size: 13px;
+  line-height: 1.75;
+  text-align: left;
+}
+.gc-article-table th,
+.gc-article-table td {
+  padding: 16px 18px;
+  vertical-align: top;
+  border-bottom: 1px solid var(--gc-line);
+}
+.gc-article-table th {
+  font-weight: 500;
+}
+.gc-article-table td {
+  color: var(--gc-muted);
+}
+.gc-article-table thead {
+  background: var(--gc-panel);
+}
+.gc-article-table tbody th {
+  min-width: 110px;
+}
+.gc-article-table tr:last-child > * {
+  border-bottom: 0;
+}
+.gc-article-bullets {
+  padding-left: 22px;
+  color: var(--gc-muted);
+  font-size: 15px;
+  line-height: 1.9;
+  display: grid;
+  gap: 18px;
+}
+.gc-article-body .gc-article-links {
+  display: grid;
+  gap: 12px;
+  padding: 0;
+  list-style: none;
+  margin: 24px 0;
+  font-size: 13px;
+  line-height: 1.7;
+}
+.gc-article-links a {
+  color: var(--gc-mint);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+.gc-home .gc-article-links a {
+  text-decoration: underline;
+}
+.gc-article-links a:hover {
+  color: var(--gc-text);
+}
+.gc-article-answer h3 {
+  font-size: 19px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 28px 0 12px;
+}
+.gc-article-body .gc-article-source h2 {
+  font: 500 15px/1.5 var(--font-sans);
+  margin: 0;
+  letter-spacing: 0;
+}
+.gc-article-body .gc-article-source p {
+  font-size: 12px;
+  margin: 0;
+}
+.gc-guide-page :is(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--gc-mint);
+  outline-offset: 5px;
+}
 .gc-article-cover {
   margin: 0 0 65px;
   border-radius: 10px;

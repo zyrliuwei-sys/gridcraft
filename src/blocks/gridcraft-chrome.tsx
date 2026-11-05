@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useSyncExternalStore } from 'react';
 import { ArrowUp, ArrowUpRight, Menu, X } from 'lucide-react';
 
 import { useSession } from '@/core/auth/client';
@@ -11,10 +11,21 @@ import { SiteUserMenu } from '@/components/site-user-menu';
 import '@/styles/gridcraft-home.css';
 import '@/styles/gridcraft-footer.css';
 
+const subscribeToHydration = () => () => {};
+const clientHydrationSnapshot = () => true;
+const serverHydrationSnapshot = () => false;
+
 export function GridcraftHeader({ home = false }: { home?: boolean }) {
   const [open, setOpen] = useState(false);
+  // The auth client can resolve before React hydrates. Keep the first client
+  // render identical to the server's loading placeholder.
+  const hydrated = useSyncExternalStore(
+    subscribeToHydration,
+    clientHydrationSnapshot,
+    serverHydrationSnapshot
+  );
   const { data: session, isPending } = useSession();
-  const user = session?.user;
+  const user = hydrated ? session?.user : undefined;
   const items = [
     { hash: 'features', label: m['gc.home.nav.product']() },
     { hash: 'learn', label: m['gc.home.nav.learn']() },
@@ -51,7 +62,7 @@ export function GridcraftHeader({ home = false }: { home?: boolean }) {
             showName
             triggerClassName="gc-account-trigger"
           />
-        ) : isPending ? (
+        ) : !hydrated || isPending ? (
           <span
             className="gc-account-loading"
             role="status"

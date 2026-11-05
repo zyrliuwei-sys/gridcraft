@@ -1,14 +1,17 @@
 import { createFileRoute } from '@tanstack/react-router';
 
 import { envConfigs } from '@/config';
+import {
+  gridcraftGuideSlugs,
+  gridcraftSearchGuideSlugs,
+  gridcraftSearchGuideUpdated,
+} from '@/lib/gridcraft-guides';
 import { baseLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
 
 const STATIC_PATHS = [
   '',
   '/editor',
-  '/guides/getting-started',
-  '/guides/formulas',
-  '/guides/charts-and-pivots',
+  ...gridcraftGuideSlugs.map((slug) => `/guides/${slug}`),
 ];
 
 type Entry = {
@@ -60,6 +63,11 @@ export const Route = createFileRoute('/sitemap.xml')({
           path,
           changeFrequency: path === '/blog' ? 'daily' : 'weekly',
           priority: path === '' ? 1 : 0.8,
+          lastModified: gridcraftSearchGuideSlugs.some(
+            (slug) => path === `/guides/${slug}`
+          )
+            ? gridcraftSearchGuideUpdated
+            : undefined,
         }));
 
         // Only published project articles belong in the sitemap. The bundled

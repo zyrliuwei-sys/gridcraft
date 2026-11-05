@@ -1,18 +1,18 @@
 import { m } from '@/paraglide/messages.js';
 import { getLocale, locales } from '@/paraglide/runtime.js';
+import { getGridcraftSearchGuides } from '@/blocks/gridcraft-search-guide-content';
 
-export const gridcraftGuideSlugs = [
-  'getting-started',
-  'formulas',
-  'charts-and-pivots',
-] as const;
-export type GridcraftGuideSlug = (typeof gridcraftGuideSlugs)[number];
+export {
+  gridcraftGuideSlugs,
+  type GridcraftGuideSlug,
+} from '@/lib/gridcraft-guides';
 
 export function getGridcraftGuides(
   locale: (typeof locales)[number] = getLocale()
 ) {
   const options = { locale };
   return [
+    ...getGridcraftSearchGuides(locale),
     {
       slug: 'getting-started',
       sample: 'budget',
