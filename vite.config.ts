@@ -11,6 +11,7 @@ import { defineConfig } from 'vite';
 
 import { paraglideDirectImports } from './paraglide-direct-imports.mjs';
 import { paraglideConfig } from './paraglide.config.mjs';
+import { prepareCloudflareAssets } from './scripts/prepare-cloudflare-assets.mjs';
 import { loadEnvFiles } from './src/lib/env';
 
 // Populate process.env from .env.local / .env.{NODE_ENV} / .env for the
@@ -145,5 +146,12 @@ export default defineConfig({
     viteReact(),
     // Cloudflare cron → /api/hotel-lobby/cron (finishes tasks whose tab closed).
     nitro({ plugins: ['./src/nitro/cron.ts'] }),
+    {
+      name: 'gridcraft-cloudflare-assets',
+      apply: 'build',
+      applyToEnvironment: (environment) =>
+        isCloudflareBuild && environment.name === 'nitro',
+      buildStart: prepareCloudflareAssets,
+    },
   ],
 });

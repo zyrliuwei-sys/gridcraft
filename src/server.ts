@@ -1,6 +1,7 @@
 import handler from '@tanstack/react-start/server-entry';
 
 import { getCookieFromHeader } from './lib/cookie';
+import { serveEditorWasm } from './lib/editor-wasm';
 import { paraglideMiddleware } from './paraglide/server.js';
 
 // On Cloudflare Workers, stash the binding env (D1, ASSETS, …) on globalThis
@@ -72,6 +73,11 @@ async function renderWithEdgeCache(req: Request): Promise<Response> {
 export default {
   async fetch(req: Request): Promise<Response> {
     await ensureCloudflareEnv();
+    const wasm = await serveEditorWasm(
+      req,
+      (globalThis as any).__CF_ENV__?.ASSETS
+    );
+    if (wasm) return wasm;
     const response = await renderWithEdgeCache(req);
     response.headers.set('X-Content-Type-Options', 'nosniff');
     response.headers.set('Referrer-Policy', 'strict-origin-when-cross-origin');

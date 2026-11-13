@@ -1,0 +1,293 @@
+{
+  "site": "https://gridcraft.me",
+  "date": "2026-11-13",
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "GridCraft: Free Open-Source Spreadsheet | Download & Excel Comparison",
+      "h1": 1,
+      "h2": 11,
+      "articleWords": 0,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/zh",
+      "status": 200,
+      "title": "gridcraft | GridCraft \u4e0b\u8f7d\u3001\u5b89\u88c5\u6307\u5357\u4e0e Excel \u529f\u80fd\u5bf9\u6bd4",
+      "h1": 1,
+      "h2": 11,
+      "articleWords": 0,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/editor",
+      "status": 200,
+      "title": "GridCraft Online Editor | ArtCraft Spreadsheet Workspace",
+      "h1": 1,
+      "h2": 1,
+      "articleWords": 0,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/zh/editor",
+      "status": 200,
+      "title": "GridCraft \u5728\u7ebf\u7f16\u8f91\u5668 | ArtCraft \u7535\u5b50\u8868\u683c\u5de5\u4f5c\u533a",
+      "h1": 1,
+      "h2": 1,
+      "articleWords": 0,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/getting-started",
+      "status": 200,
+      "title": "GridCraft XLSX guide: open, edit and save a workbook | gridcraft",
+      "h1": 1,
+      "h2": 8,
+      "articleWords": 421,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/zh/guides/getting-started",
+      "status": 200,
+      "title": "GridCraft XLSX \u6307\u5357\uff1a\u6253\u5f00\u3001\u7f16\u8f91\u4e0e\u4fdd\u5b58\u5de5\u4f5c\u7c3f | gridcraft",
+      "h1": 1,
+      "h2": 8,
+      "articleWords": 84,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/formulas",
+      "status": 200,
+      "title": "GridCraft formulas: a practical SUM and IF tutorial | gridcraft",
+      "h1": 1,
+      "h2": 8,
+      "articleWords": 403,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/zh/guides/formulas",
+      "status": 200,
+      "title": "GridCraft \u516c\u5f0f\u6559\u7a0b\uff1a\u5b9e\u7528\u7684 SUM \u4e0e IF \u5165\u95e8 | gridcraft",
+      "h1": 1,
+      "h2": 8,
+      "articleWords": 115,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/charts-and-pivots",
+      "status": 200,
+      "title": "GridCraft charts and PivotTables: a beginner\u2019s guide | gridcraft",
+      "h1": 1,
+      "h2": 8,
+      "articleWords": 442,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/zh/guides/charts-and-pivots",
+      "status": 200,
+      "title": "GridCraft \u56fe\u8868\u4e0e\u6570\u636e\u900f\u89c6\u8868\uff1a\u521d\u5b66\u8005\u6307\u5357 | gridcraft",
+      "h1": 1,
+      "h2": 8,
+      "articleWords": 102,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/gridcraft-excel-compatibility",
+      "status": 200,
+      "title": "GridCraft and Excel: Open, Edit and Save XLSX Files | gridcraft",
+      "h1": 1,
+      "h2": 15,
+      "articleWords": 1642,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/zh/guides/gridcraft-excel-compatibility",
+      "status": 200,
+      "title": "GridCraft \u4e0e Excel\uff1a\u6253\u5f00\u3001\u7f16\u8f91\u548c\u4fdd\u5b58 XLSX \u6587\u4ef6 | gridcraft",
+      "h1": 1,
+      "h2": 15,
+      "articleWords": 259,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/gridcraft-vs-excel",
+      "status": 200,
+      "title": "GridCraft vs Excel: Which Spreadsheet Fits Your Work? | gridcraft",
+      "h1": 1,
+      "h2": 14,
+      "articleWords": 1605,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/zh/guides/gridcraft-vs-excel",
+      "status": 200,
+      "title": "GridCraft vs Excel\uff1a\u54ea\u6b3e\u7535\u5b50\u8868\u683c\u9002\u5408\u4f60\u7684\u5de5\u4f5c\uff1f | gridcraft",
+      "h1": 1,
+      "h2": 14,
+      "articleWords": 231,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/what-is-gridcraft",
+      "status": 200,
+      "title": "What Is GridCraft? A Guide to the Open-Source Spreadsheet | gridcraft",
+      "h1": 1,
+      "h2": 15,
+      "articleWords": 1634,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/zh/guides/what-is-gridcraft",
+      "status": 200,
+      "title": "\u4ec0\u4e48\u662f GridCraft\uff1f\u5f00\u6e90\u7535\u5b50\u8868\u683c\u4f7f\u7528\u6307\u5357 | gridcraft",
+      "h1": 1,
+      "h2": 15,
+      "articleWords": 240,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/gridcraft-online",
+      "status": 200,
+      "title": "GridCraft Online: Open a Spreadsheet and Save Your Work | gridcraft",
+      "h1": 1,
+      "h2": 14,
+      "articleWords": 1642,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/zh/guides/gridcraft-online",
+      "status": 200,
+      "title": "GridCraft \u5728\u7ebf\u4f7f\u7528\uff1a\u6253\u5f00\u7535\u5b50\u8868\u683c\u5e76\u4fdd\u5b58\u6587\u4ef6 | gridcraft",
+      "h1": 1,
+      "h2": 14,
+      "articleWords": 170,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "title": "Privacy Policy | gridcraft",
+      "h1": 1,
+      "h2": 13,
+      "articleWords": 517,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/terms-of-service",
+      "status": 200,
+      "title": "Terms of Service | gridcraft",
+      "h1": 1,
+      "h2": 14,
+      "articleWords": 517,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/acceptable-use-policy",
+      "status": 200,
+      "title": "Acceptable Use Policy | gridcraft",
+      "h1": 1,
+      "h2": 12,
+      "articleWords": 393,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "title": "About GridCraft.me \u2014 Who Runs This Site",
+      "h1": 1,
+      "h2": 8,
+      "articleWords": 377,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "title": "Contact GridCraft.me",
+      "h1": 1,
+      "h2": 8,
+      "articleWords": 280,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides",
+      "status": 200,
+      "title": "GridCraft guides: learn, test, and troubleshoot | gridcraft",
+      "h1": 1,
+      "h2": 5,
+      "articleWords": 0,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/vlookup-xlookup",
+      "status": 200,
+      "title": "VLOOKUP and XLOOKUP in GridCraft: Tested Parameters and Errors | gridcraft",
+      "h1": 1,
+      "h2": 10,
+      "articleWords": 836,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/pivot-table-tutorial",
+      "status": 200,
+      "title": "GridCraft Pivot Tables: From Raw Rows to a Summary Chart | gridcraft",
+      "h1": 1,
+      "h2": 10,
+      "articleWords": 839,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/csv-import-export",
+      "status": 200,
+      "title": "GridCraft CSV Import and Export: Encoding, Delimiters, and Dates | gridcraft",
+      "h1": 1,
+      "h2": 10,
+      "articleWords": 879,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/formulas-not-recalculating",
+      "status": 200,
+      "title": "GridCraft Formulas Not Recalculating: A Practical Checklist | gridcraft",
+      "h1": 1,
+      "h2": 11,
+      "articleWords": 918,
+      "footerLegalLinks": 3
+    },
+    {
+      "path": "/guides/large-spreadsheet-performance",
+      "status": 200,
+      "title": "GridCraft with 12,000 Rows: Practical Performance Notes | gridcraft",
+      "h1": 1,
+      "h2": 10,
+      "articleWords": 899,
+      "footerLegalLinks": 3
+    }
+  ],
+  "newChinesePages": "404 as intended",
+  "publicApis": "200",
+  "adminApis": "anonymous access rejected",
+  "deploymentVersion": "dde4ab6e-61cc-44c1-abe9-30b91e386d9b",
+  "previousVersion": "a1530f95-20a3-4a52-8386-11d06c48b2d3",
+  "wasm": {
+    "sha256": "e2c0add31d771b508ce1a854cd17e73384a0f68f7b5cccbb6a5021450b0b1e7c",
+    "decodedBytes": 26298748,
+    "transferBytes": 9658977,
+    "matchesOfficialBuild": true
+  },
+  "liveEditor": {
+    "sample": "budget",
+    "charts": 1,
+    "xlsxRoundTripBytes": 7781,
+    "formulaInputs": ["21", "=Z1*2"],
+    "reopenedValues": [21, 42]
+  },
+  "validation": [
+    "pnpm build passed",
+    "pnpm exec tsc --noEmit passed",
+    "security-scan clean",
+    "Cloudflare build and deployment passed",
+    "GET gzip, identity, HEAD, and POST rejection verified locally",
+    "29 live sitemap pages passed metadata, legal footer, and old-version checks"
+  ]
+}

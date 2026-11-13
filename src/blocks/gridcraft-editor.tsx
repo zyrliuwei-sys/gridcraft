@@ -224,6 +224,33 @@ export function GridcraftEditor({ sample }: { sample?: EditorSample }) {
       <footer className="gc-editor-footer">
         <span>{m['gc.editor.version']()}</span>
         <span className="gc-editor-credit">{m['gc.editor.credit']()}</span>
+        <nav
+          className="gc-editor-legal"
+          aria-label={m['landing.footer.legal']()}
+        >
+          <span>{m['landing.footer.legal']()}</span>
+          <Link
+            href="/privacy-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {m['landing.footer.privacy']()}
+          </Link>
+          <Link
+            href="/terms-of-service"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {m['landing.footer.terms']()}
+          </Link>
+          <Link
+            href="/acceptable-use-policy"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {m['landing.footer.aup']()}
+          </Link>
+        </nav>
         {active && (
           <div>
             <button

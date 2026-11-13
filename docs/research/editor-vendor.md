@@ -40,3 +40,19 @@ to reduce its approximately 26.3 MB uncompressed transfer. Upstream `_headers`
 and `.htaccess` files are examples, not configuration automatically consumed by
 TanStack Start/Nitro or a Cloudflare Worker. Production hosting must set its own
 headers. No server-side API or credentials are involved in editor startup.
+
+### Cloudflare deployment packaging
+
+The v0.19.1 WASM is 26,298,748 bytes, above Cloudflare's 25 MiB per-asset limit.
+The Cloudflare-only Vite build hook in `scripts/prepare-cloudflare-assets.mjs`
+stores a 9,658,977-byte gzip copy in the generated assets directory **before**
+Nitro indexes it. The checked-in official distribution remains unchanged.
+`src/lib/editor-wasm.ts` serves the original pinned URL through the ASSETS
+binding, with `application/wasm` and explicit transport encoding. Identity
+requests are decompressed as a stream; GET and HEAD are supported. A generic
+`_headers` encoding rule is insufficient: workerd can double-compress that body.
+
+When updating the vendored release, update the pinned WASM path in
+`src/lib/editor-wasm.ts` too, and compare the downloaded/decompressed SHA-256
+with the checked-in original before deployment. For this release it is
+`e2c0add31d771b508ce1a854cd17e73384a0f68f7b5cccbb6a5021450b0b1e7c`.

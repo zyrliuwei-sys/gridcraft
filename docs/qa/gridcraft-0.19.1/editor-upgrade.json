@@ -189,5 +189,6 @@
     "29 sitemap pages returned 200 without the old release label"
   ],
   "previewNote": "Local node preview had unrelated auth-session HTTP 500 warnings because it was started without production database configuration; no editor page errors were observed.",
-  "remainingException": "Editor footer links were not added because the user explicitly limited this follow-up to version and embedded program changes, with interface unchanged."
+  "remainingException": null,
+  "deploymentFollowUp": "The user subsequently requested fixes and deployment. A compact Legal navigation was added to the editor footer; toolbar, launch flow and embedded program interface remain unchanged. See deployment-verification.json."
 }
