@@ -48,7 +48,8 @@ export function GuideLinks({ links }: { links: GuideLink[] }) {
     <ul className="gc-article-links">
       {links.map((link) => (
         <li key={link.href}>
-          {link.href.startsWith('/editor-app/') ? (
+          {link.href.startsWith('/editor-app/') ||
+          link.href.startsWith('/guide-samples/') ? (
             <a href={link.href}>{link.label}</a>
           ) : (
             <Link href={link.href}>{link.label}</Link>

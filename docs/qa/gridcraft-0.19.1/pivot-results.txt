@@ -1,0 +1,6 @@
+{"command":"range.setValues","result":{"cells":12,"converted":[],"convertedCount":0}}
+{"command":"insert.pivotTable","result":{"anchor":"A3","fields":["Region","Product","Revenue"],"id":1,"name":"RevenueByRegion","range":"A3:B6","sheet":"Sheet2","source":"Sheet1!A1:C4"}}
+{"command":"sheet.read","result":{"range":"A3:B6","sheet":"Sheet2","values":[["Row Labels","Sum of Revenue"],["North",720.0],["South",320.0],["Grand Total",1040.0]]}}
+{"command":"insert.pivotChart","result":{"chart":1,"pivot":"RevenueByRegion","series":1}}
+{"command":"pivot.list","result":[{"anchor":"A3","calculatedFields":[],"columns":[],"enableShowDetails":true,"filters":[],"grandTotalsCols":true,"grandTotalsRows":true,"id":1,"layout":"compact","name":"RevenueByRegion","range":"A3:B6","rows":[{"collapsed":[],"field":"Region","group":"none","sort":"asc"}],"sheet":"Sheet2","showHeaders":true,"source":"Sheet1!A1:C4","style":"PivotStyleLight16","subtotals":"top","values":[{"field":"Revenue","func":"sum","name":"Sum of Revenue","numberFormat":null,"showAs":"normal"}],"valuesOnRows":false,"valuesPosition":null}]}
+wrote pivot.xlsx (9618 bytes)

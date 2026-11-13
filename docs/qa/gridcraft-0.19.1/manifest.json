@@ -1,0 +1,36 @@
+{
+  "testedAt": "2026-11-13",
+  "version": "0.19.1",
+  "release": "https://github.com/storytold/gridcraft/releases/tag/v0.19.1",
+  "releasePublishedAt": "2026-11-12T00:06:29Z",
+  "cliSha256": "7c2895ebad0bbd92b65c622ba7e22ada56e0498065dfdbd433111ba1e225eb8a",
+  "webSha256": "48c5d1b101befebb3c5ba3b7a14914f01c3207934813ed07dc4251b7ae116a78",
+  "environment": "Official macOS universal CLI and official web release in Tabbit on macOS. The repository editor now vendors the same unmodified v0.19.1 distribution.",
+  "reproduction": [
+    "gridcraft-cli eval '=VLOOKUP(20,A2:B5,2,FALSE)' --in public/guide-samples/lookup.csv --json",
+    "gridcraft-cli run --script docs/qa/gridcraft-0.19.1/pivot.jsonl --out pivot.xlsx",
+    "gridcraft-cli run --script docs/qa/gridcraft-0.19.1/recalc.jsonl",
+    "gridcraft-cli run --script docs/qa/gridcraft-0.19.1/cross-sheet.jsonl",
+    "gridcraft-cli run --script docs/qa/gridcraft-0.19.1/csv-as-text.jsonl"
+  ],
+  "browserChecks": {
+    "pivot": "Opened CLI-exported pivot.xlsx in v0.19.1; screenshot verified North 720, South 320, total 1040 and a two-category column chart.",
+    "largeSheet": {
+      "range": "A1:E12001",
+      "cells": 60005,
+      "formulaColumn": "Enter =C2*D2 in E2 then edit.fillDown E2:E12001; CSV formula strings were initially text.",
+      "observations": {
+        "opening": "Completed; grid usable",
+        "wheelAndPageDown": "Responsive spot checks",
+        "fillDown": "Noticeable wait for the full-column batch",
+        "editLastRow": "C12001=20 yielded E12001=250 at price 12.5",
+        "sortDescending": "Complete rows sorted by ID; IDs 12000/11999/11998 and revenues 250/137.5/125 checked"
+      },
+      "limits": "Qualitative spot checks; not continuous frame measurement, timing benchmark, mobile test, or stability guarantee."
+    }
+  },
+  "scopeExceptions": [
+    "Editor interface and entry points remain unchanged; the existing editor footer layout is retained.",
+    "No new Chinese routes or translations of the new articles. Existing Chinese version annotations are synchronized to the updated download links and editor."
+  ]
+}

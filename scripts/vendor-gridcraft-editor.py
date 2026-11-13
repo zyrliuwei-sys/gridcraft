@@ -14,9 +14,9 @@ import subprocess
 import tempfile
 import zipfile
 
-VERSION = "0.7.0"
+VERSION = "0.19.1"
 URL = f"https://github.com/storytold/gridcraft/releases/download/v{VERSION}/gridcraft-web-{VERSION}.zip"
-SHA256 = "ad10af2baf9c7ed4ccbd81e32b37698f5075cdf4f26b726fee7fc7938a3a8d27"
+SHA256 = "48c5d1b101befebb3c5ba3b7a14914f01c3207934813ed07dc4251b7ae116a78"
 ROOT = Path(__file__).resolve().parents[1]
 DESTINATION = ROOT / "public" / "editor-app"
 
@@ -50,13 +50,23 @@ def vendor(archive: Path, staging: Path) -> None:
     for name in ("index.html", "LICENSE-MIT", "LICENSE-APACHE", "README.md", "HOSTING.md"):
         if not (staging / name).is_file():
             raise ValueError(f"Missing required upstream file: {name}")
-    # v0.7.0 ships relative asset URLs, including its wasm-bindgen module; no
-    # HTML, JavaScript or WebAssembly modifications are necessary for this path.
-    DESTINATION.mkdir(parents=True, exist_ok=True)
-    for source in staging.iterdir():
-        if source.is_dir():
-            raise ValueError(f"Unexpected distribution directory: {source.name}")
-        shutil.copyfile(source, DESTINATION / source.name)
+    # Keep upstream relative URLs and nested JS snippets byte-for-byte intact.
+    # Prepare the whole distribution before swapping it in, so old hashed assets
+    # do not accumulate and a failed copy leaves the installed build untouched.
+    DESTINATION.parent.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(prefix=".gridcraft-vendor-", dir=DESTINATION.parent) as directory:
+        temporary = Path(directory)
+        replacement = temporary / "next"
+        backup = temporary / "previous"
+        shutil.copytree(staging, replacement)
+        if DESTINATION.exists():
+            DESTINATION.rename(backup)
+        try:
+            replacement.rename(DESTINATION)
+        except BaseException:
+            if backup.exists():
+                backup.rename(DESTINATION)
+            raise
     print(f"Verified SHA256 {digest}; vendored GridCraft v{VERSION} at {DESTINATION}")
 
 

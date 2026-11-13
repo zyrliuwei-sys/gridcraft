@@ -12,6 +12,8 @@ import {
 import { Link } from '@/core/i18n/navigation';
 import { m } from '@/paraglide/messages.js';
 import { getGridcraftSearchGuideCards } from '@/blocks/gridcraft-search-guide-content';
+import { getGridcraftTestedGuideCards } from '@/blocks/gridcraft-tested-guide-content';
+import { GridcraftGuideList } from '@/components/gridcraft-guide-list';
 
 import '@/styles/gridcraft-resources.css';
 
@@ -27,7 +29,7 @@ type Guide = {
 };
 type Platform = 'mac' | 'windows' | 'linux';
 const releaseBase =
-  'https://github.com/storytold/gridcraft/releases/download/v0.7.0/';
+  'https://github.com/storytold/gridcraft/releases/download/v0.19.1/';
 
 function GuideCard({ guide }: { guide: Guide }) {
   return (
@@ -145,7 +147,7 @@ export function GridcraftResources() {
     mac: {
       label: m['gc.resources.download.mac'](),
       architecture: m['gc.resources.download.mac.arch'](),
-      file: 'gridcraft-0.7.0-macos-universal.dmg',
+      file: 'gridcraft-0.19.1-macos-universal.dmg',
       steps: [
         m['gc.resources.download.mac.step1'](),
         m['gc.resources.download.mac.step2'](),
@@ -155,7 +157,7 @@ export function GridcraftResources() {
     windows: {
       label: m['gc.resources.download.windows'](),
       architecture: m['gc.resources.download.windows.arch'](),
-      file: 'gridcraft-0.7.0-windows-x64.msi',
+      file: 'gridcraft-0.19.1-windows-x64.msi',
       steps: [
         m['gc.resources.download.windows.step1'](),
         m['gc.resources.download.windows.step2'](),
@@ -165,7 +167,7 @@ export function GridcraftResources() {
     linux: {
       label: m['gc.resources.download.linux'](),
       architecture: m['gc.resources.download.linux.arch'](),
-      file: 'gridcraft-0.7.0-linux-x86_64.AppImage',
+      file: 'gridcraft-0.19.1-linux-x86_64.AppImage',
       steps: [
         m['gc.resources.download.linux.step1'](),
         m['gc.resources.download.linux.step2'](),
@@ -174,6 +176,7 @@ export function GridcraftResources() {
     },
   };
   const currentPlatform = platforms[platform];
+  const testedGuides = getGridcraftTestedGuideCards();
   const faqs = [
     [m['gc.resources.faq.free.q'](), m['gc.resources.faq.free.a']()],
     [
@@ -312,6 +315,24 @@ export function GridcraftResources() {
                 <GuideCard key={guide.id} guide={guide} />
               ))}
           </div>
+          {testedGuides.length > 0 && (
+            <section
+              className="gc-tested-guides"
+              aria-labelledby="gc-tested-guides-title"
+            >
+              <h3 id="gc-tested-guides-title" className="gc-learn-subheading">
+                {m['gc.site.tested']()}
+              </h3>
+              <p className="gc-section-intro">
+                {m['gc.site.tested_description']()}
+              </p>
+              <GridcraftGuideList guides={testedGuides} />
+              <Link className="gc-resource-textlink" href="/guides">
+                {m['gc.site.guides']()}
+                <ArrowRight size={15} />
+              </Link>
+            </section>
+          )}
           <p className="gc-learning-footnote">
             <FileSpreadsheet size={15} />
             {m['gc.resources.learn.footnote']()}

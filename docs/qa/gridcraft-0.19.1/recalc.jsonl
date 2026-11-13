@@ -1,0 +1,13 @@
+{"command": "cell.set", "params": {"cell": "A1", "input": "2"}}
+{"command": "cell.set", "params": {"cell": "B1", "input": "=A1*3"}}
+{"command": "sheet.read", "params": {"range": "A1:B1"}}
+{"command": "cell.set", "params": {"cell": "A1", "input": "5"}}
+{"command": "sheet.read", "params": {"range": "A1:B1"}}
+{"command": "formulas.calculationOptions", "params": {"mode": "manual"}}
+{"command": "cell.set", "params": {"cell": "A1", "input": "7"}}
+{"command": "sheet.read", "params": {"range": "A1:B1"}}
+{"command": "formulas.calculateNow", "params": {}}
+{"command": "sheet.read", "params": {"range": "A1:B1"}}
+{"command": "cell.set", "params": {"cell": "C1", "input": "=C1+1"}}
+{"command": "formulas.calculateNow", "params": {}}
+{"command": "sheet.read", "params": {"range": "C1"}}

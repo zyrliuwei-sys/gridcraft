@@ -1,36 +1,29 @@
-import { useState, useSyncExternalStore } from 'react';
+import { useState } from 'react';
 import { ArrowUp, ArrowUpRight, Menu, X } from 'lucide-react';
 
-import { useSession } from '@/core/auth/client';
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
 import { m } from '@/paraglide/messages.js';
+import { getLocale } from '@/paraglide/runtime.js';
 import { FooterBadgeList } from '@/components/footer-badge-list';
-import { SiteUserMenu } from '@/components/site-user-menu';
 
 import '@/styles/gridcraft-home.css';
 import '@/styles/gridcraft-footer.css';
 
-const subscribeToHydration = () => () => {};
-const clientHydrationSnapshot = () => true;
-const serverHydrationSnapshot = () => false;
-
 export function GridcraftHeader({ home = false }: { home?: boolean }) {
   const [open, setOpen] = useState(false);
-  // The auth client can resolve before React hydrates. Keep the first client
-  // render identical to the server's loading placeholder.
-  const hydrated = useSyncExternalStore(
-    subscribeToHydration,
-    clientHydrationSnapshot,
-    serverHydrationSnapshot
-  );
-  const { data: session, isPending } = useSession();
-  const user = hydrated ? session?.user : undefined;
+  const english = getLocale() === 'en';
   const items = [
-    { hash: 'features', label: m['gc.home.nav.product']() },
-    { hash: 'learn', label: m['gc.home.nav.learn']() },
-    { hash: 'compare', label: m['gc.home.nav.compare']() },
-    { hash: 'download', label: m['gc.home.nav.download']() },
+    { href: `${home ? '' : '/'}#features`, label: m['gc.home.nav.product']() },
+    { href: `${home ? '' : '/'}#learn`, label: m['gc.home.nav.learn']() },
+    { href: `${home ? '' : '/'}#compare`, label: m['gc.home.nav.compare']() },
+    { href: `${home ? '' : '/'}#download`, label: m['gc.home.nav.download']() },
+    ...(english
+      ? [
+          { href: '/about', label: m['gc.site.about']() },
+          { href: '/contact', label: m['gc.site.contact']() },
+        ]
+      : []),
   ];
   return (
     <header className="gc-header">
@@ -44,35 +37,12 @@ export function GridcraftHeader({ home = false }: { home?: boolean }) {
         aria-label={m['gc.home.navigation']()}
       >
         {items.map((item) => (
-          <Link
-            key={item.hash}
-            href={`${home ? '' : '/'}#${item.hash}`}
-            onClick={() => setOpen(false)}
-          >
+          <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
             {item.label}
           </Link>
         ))}
       </nav>
       <div className="gc-header-actions">
-        {user ? (
-          <SiteUserMenu
-            name={user.name || user.email}
-            email={user.email}
-            image={user.image}
-            showName
-            triggerClassName="gc-account-trigger"
-          />
-        ) : !hydrated || isPending ? (
-          <span
-            className="gc-account-loading"
-            role="status"
-            aria-label={m['settings.profile.loading']()}
-          />
-        ) : (
-          <Link href="/sign-in" className="gc-login">
-            {m['common.sign.sign_in_title']()}
-          </Link>
-        )}
         <Link href="/editor" className="gc-nav-cta">
           {m['gc.home.start']()}
           <ArrowUpRight size={15} />
@@ -92,6 +62,7 @@ export function GridcraftHeader({ home = false }: { home?: boolean }) {
 }
 
 export function GridcraftFooter() {
+  const english = getLocale() === 'en';
   return (
     <footer
       id="site-footer"
@@ -117,6 +88,7 @@ export function GridcraftFooter() {
         </nav>
         <nav className="gc-footer-group" aria-labelledby="gc-footer-learn">
           <h2 id="gc-footer-learn">{m['gc.home.nav.learn']()}</h2>
+          {english && <Link href="/guides">{m['gc.site.guides']()}</Link>}
           <Link href="/guides/getting-started">
             {m['gc.resources.guide.start.tag']()}
           </Link>
@@ -129,6 +101,12 @@ export function GridcraftFooter() {
         </nav>
         <nav className="gc-footer-group" aria-labelledby="gc-footer-project">
           <h2 id="gc-footer-project">{m['gc.footer.project']()}</h2>
+          {english && (
+            <>
+              <Link href="/about">{m['gc.site.about']()}</Link>
+              <Link href="/contact">{m['gc.site.contact']()}</Link>
+            </>
+          )}
           <a
             href="https://getartcraft.com/apps/gridcraft"
             target="_blank"
@@ -152,6 +130,12 @@ export function GridcraftFooter() {
           >
             {m['gc.home.licenses']()}
           </a>
+        </nav>
+        <nav className="gc-footer-group" aria-labelledby="gc-footer-legal">
+          <h2 id="gc-footer-legal">{m['landing.footer.legal']()}</h2>
+          <Link href="/privacy-policy">{m['landing.footer.privacy']()}</Link>
+          <Link href="/terms-of-service">{m['landing.footer.terms']()}</Link>
+          <Link href="/acceptable-use-policy">{m['landing.footer.aup']()}</Link>
         </nav>
       </div>
       <FooterBadgeList className="my-8" />

@@ -1,0 +1,2 @@
+{"command": "file.open", "params": {"path": "/privatepublic/guide-samples/utf8.csv", "csvAsText": true}}
+{"command": "sheet.read", "params": {}}

@@ -2,16 +2,17 @@ import { createFileRoute } from '@tanstack/react-router';
 
 import { envConfigs } from '@/config';
 import {
-  gridcraftGuideSlugs,
+  gridcraftBilingualGuideSlugs,
   gridcraftSearchGuideSlugs,
   gridcraftSearchGuideUpdated,
+  gridcraftTestedGuideSlugs,
 } from '@/lib/gridcraft-guides';
 import { baseLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
 
 const STATIC_PATHS = [
   '',
   '/editor',
-  ...gridcraftGuideSlugs.map((slug) => `/guides/${slug}`),
+  ...gridcraftBilingualGuideSlugs.map((slug) => `/guides/${slug}`),
 ];
 
 type Entry = {
@@ -19,6 +20,7 @@ type Entry = {
   lastModified?: string;
   changeFrequency: string;
   priority: number;
+  languages?: readonly (typeof locales)[number][];
 };
 
 function urlFor(path: string, locale: string): string {
@@ -31,14 +33,15 @@ function urlFor(path: string, locale: string): string {
 // recommended hreflang form) — so /zh pages are real <loc>s that crawlers and
 // the IndexNow sitemap submit pick up, not just alternates of the en page.
 function entryXml(e: Entry): string {
+  const languages = e.languages ?? locales;
   const alternates = [
-    ...locales.map(
+    ...languages.map(
       (loc) =>
         `    <xhtml:link rel="alternate" hreflang="${loc}" href="${urlFor(e.path, loc)}"/>`
     ),
     `    <xhtml:link rel="alternate" hreflang="x-default" href="${urlFor(e.path, baseLocale)}"/>`,
   ].join('\n');
-  return locales
+  return languages
     .map((loc) =>
       [
         '  <url>',
@@ -69,6 +72,28 @@ export const Route = createFileRoute('/sitemap.xml')({
             ? gridcraftSearchGuideUpdated
             : undefined,
         }));
+        // New content is English-only; do not advertise nonexistent /zh pages.
+        for (const path of [
+          '/privacy-policy',
+          '/terms-of-service',
+          '/acceptable-use-policy',
+          '/about',
+          '/contact',
+          '/guides',
+          ...gridcraftTestedGuideSlugs.map((slug) => `/guides/${slug}`),
+        ]) {
+          entries.push({
+            path,
+            languages: ['en'],
+            changeFrequency: 'monthly',
+            priority: path.startsWith('/guides') ? 0.8 : 0.5,
+            ...(path.startsWith('/guides') ||
+            path === '/about' ||
+            path === '/contact'
+              ? { lastModified: '2026-11-13' }
+              : {}),
+          });
+        }
 
         // Only published project articles belong in the sitemap. The bundled
         // ShipAny tutorial posts are demo content and carry noindex.

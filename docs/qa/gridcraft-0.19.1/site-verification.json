@@ -1,0 +1,209 @@
+{
+  "pages": [
+    {
+      "path": "/",
+      "status": 200,
+      "title": "GridCraft: Free Open-Source Spreadsheet | Download & Excel Comparison",
+      "h1": 1,
+      "h2": 7,
+      "articleWords": 0,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false,
+      "guideLinks": 13
+    },
+    {
+      "path": "/guides",
+      "status": 200,
+      "title": "GridCraft guides: learn, test, and troubleshoot | gridcraft",
+      "h1": 1,
+      "h2": 1,
+      "articleWords": 0,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false,
+      "guideLinks": 12
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "title": "About GridCraft.me \u2014 Who Runs This Site",
+      "h1": 1,
+      "h2": 4,
+      "articleWords": 377,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "title": "Contact GridCraft.me",
+      "h1": 1,
+      "h2": 4,
+      "articleWords": 268,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "title": "Privacy Policy | gridcraft",
+      "h1": 1,
+      "h2": 9,
+      "articleWords": 517,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false
+    },
+    {
+      "path": "/terms-of-service",
+      "status": 200,
+      "title": "Terms of Service | gridcraft",
+      "h1": 1,
+      "h2": 10,
+      "articleWords": 517,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false
+    },
+    {
+      "path": "/acceptable-use-policy",
+      "status": 200,
+      "title": "Acceptable Use Policy | gridcraft",
+      "h1": 1,
+      "h2": 8,
+      "articleWords": 393,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/vlookup-xlookup",
+      "status": 200,
+      "title": "VLOOKUP and XLOOKUP in GridCraft: Tested Parameters and Errors | gridcraft",
+      "h1": 1,
+      "h2": 6,
+      "articleWords": 836,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/pivot-table-tutorial",
+      "status": 200,
+      "title": "GridCraft Pivot Tables: From Raw Rows to a Summary Chart | gridcraft",
+      "h1": 1,
+      "h2": 6,
+      "articleWords": 839,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/csv-import-export",
+      "status": 200,
+      "title": "GridCraft CSV Import and Export: Encoding, Delimiters, and Dates | gridcraft",
+      "h1": 1,
+      "h2": 6,
+      "articleWords": 879,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/formulas-not-recalculating",
+      "status": 200,
+      "title": "GridCraft Formulas Not Recalculating: A Practical Checklist | gridcraft",
+      "h1": 1,
+      "h2": 7,
+      "articleWords": 918,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/large-spreadsheet-performance",
+      "status": 200,
+      "title": "GridCraft with 12,000 Rows: Practical Performance Notes | gridcraft",
+      "h1": 1,
+      "h2": 6,
+      "articleWords": 899,
+      "signIn": 0,
+      "legal": 3,
+      "oldVersion": false
+    },
+    {
+      "path": "/zh/about",
+      "status": 404
+    },
+    {
+      "path": "/zh/contact",
+      "status": 404
+    },
+    {
+      "path": "/zh/guides",
+      "status": 404
+    },
+    {
+      "path": "/zh/guides/vlookup-xlookup",
+      "status": 404
+    },
+    {
+      "path": "/zh/guides/pivot-table-tutorial",
+      "status": 404
+    },
+    {
+      "path": "/zh/guides/csv-import-export",
+      "status": 404
+    },
+    {
+      "path": "/zh/guides/formulas-not-recalculating",
+      "status": 404
+    },
+    {
+      "path": "/zh/guides/large-spreadsheet-performance",
+      "status": 404
+    }
+  ],
+  "sitemap": [
+    "https://gridcraft.me/",
+    "https://gridcraft.me/zh",
+    "https://gridcraft.me/editor",
+    "https://gridcraft.me/zh/editor",
+    "https://gridcraft.me/guides/getting-started",
+    "https://gridcraft.me/zh/guides/getting-started",
+    "https://gridcraft.me/guides/formulas",
+    "https://gridcraft.me/zh/guides/formulas",
+    "https://gridcraft.me/guides/charts-and-pivots",
+    "https://gridcraft.me/zh/guides/charts-and-pivots",
+    "https://gridcraft.me/guides/gridcraft-excel-compatibility",
+    "https://gridcraft.me/zh/guides/gridcraft-excel-compatibility",
+    "https://gridcraft.me/guides/gridcraft-vs-excel",
+    "https://gridcraft.me/zh/guides/gridcraft-vs-excel",
+    "https://gridcraft.me/guides/what-is-gridcraft",
+    "https://gridcraft.me/zh/guides/what-is-gridcraft",
+    "https://gridcraft.me/guides/gridcraft-online",
+    "https://gridcraft.me/zh/guides/gridcraft-online",
+    "https://gridcraft.me/privacy-policy",
+    "https://gridcraft.me/terms-of-service",
+    "https://gridcraft.me/acceptable-use-policy",
+    "https://gridcraft.me/about",
+    "https://gridcraft.me/contact",
+    "https://gridcraft.me/guides",
+    "https://gridcraft.me/guides/vlookup-xlookup",
+    "https://gridcraft.me/guides/pivot-table-tutorial",
+    "https://gridcraft.me/guides/csv-import-export",
+    "https://gridcraft.me/guides/formulas-not-recalculating",
+    "https://gridcraft.me/guides/large-spreadsheet-performance"
+  ],
+  "validation": {
+    "build": "pnpm build passed (final)",
+    "typecheck": "pnpm exec tsc --noEmit passed",
+    "diffCheck": "git diff --check passed",
+    "browser": "Tabbit: three legal footer links clicked; mobile nav About/Contact visible; 12 home Learn links; 12 directory entries; all three v0.19.1 platform asset hrefs verified.",
+    "editor": "Official v0.19.1 bundle installed byte-for-byte; editor UI and entry points unchanged per user confirmation. Existing editor footer retained without additional links.",
+    "contact": "Confirmed target response time 2\u20133 business days, explicitly not guaranteed."
+  }
+}

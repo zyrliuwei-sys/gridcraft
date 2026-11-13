@@ -1,0 +1,32 @@
+{
+  "utf8.csv": {
+    "out": "Name,Date,Code,Amount\nCafé,2026-11-12,12,12.5\n上海,3/4/2026,7,8\n",
+    "err": "Warning: column B: every date is ambiguous, so it was read month first (03/04/2026)\n",
+    "code": 0
+  },
+  "semicolon.csv": {
+    "out": "Name,Amount\nCafé,12.5\n上海,8\n",
+    "err": "",
+    "code": 0
+  },
+  "tabs.tsv": {
+    "out": "Name,Amount\nCafé,12.5\n上海,8\n",
+    "err": "",
+    "code": 0
+  },
+  "quoted.csv": {
+    "out": "Name,Note\n\"North, Inc.\",\"He said \"\"hello\"\"\"\n",
+    "err": "",
+    "code": 0
+  },
+  "latin1.csv": {
+    "out": "Name,Amount\nCafé,1\n",
+    "err": "",
+    "code": 0
+  },
+  "csvAsText": {
+    "out": "{\"command\":\"file.open\",\"result\":{\"index\":0,\"sheets\":[\"utf8\"],\"title\":\"utf8.csv\",\"warnings\":[]}}\n{\"command\":\"sheet.read\",\"result\":{\"range\":\"A1:D3\",\"sheet\":\"utf8\",\"values\":[[\"Name\",\"Date\",\"Code\",\"Amount\"],[\"Café\",\"2026-11-12\",\"0012\",\"12.50\"],[\"上海\",\"03/04/2026\",\"0007\",\"8\"]]}}\n",
+    "err": "",
+    "code": 0
+  }
+}

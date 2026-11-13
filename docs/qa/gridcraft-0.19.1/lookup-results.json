@@ -1,0 +1,98 @@
+[
+  {
+    "formula": "=VLOOKUP(20,A2:B5,2,FALSE)",
+    "code": 0,
+    "out": "200.0",
+    "err": ""
+  },
+  {
+    "formula": "=VLOOKUP(25,A2:B5,2,TRUE)",
+    "code": 0,
+    "out": "250.0",
+    "err": ""
+  },
+  {
+    "formula": "=VLOOKUP(25,A2:B5,2,FALSE)",
+    "code": 0,
+    "out": "{\"error\":\"#N/A\"}",
+    "err": ""
+  },
+  {
+    "formula": "=VLOOKUP(20,A2:B5,3,FALSE)",
+    "code": 0,
+    "out": "{\"error\":\"#REF!\"}",
+    "err": ""
+  },
+  {
+    "formula": "=VLOOKUP(20,A2:B5,0,FALSE)",
+    "code": 0,
+    "out": "{\"error\":\"#VALUE!\"}",
+    "err": ""
+  },
+  {
+    "formula": "=XLOOKUP(20,A2:A5,B2:B5)",
+    "code": 0,
+    "out": "200.0",
+    "err": ""
+  },
+  {
+    "formula": "=XLOOKUP(99,A2:A5,B2:B5,\"missing\")",
+    "code": 0,
+    "out": "\"missing\"",
+    "err": ""
+  },
+  {
+    "formula": "=XLOOKUP(25,A2:A5,B2:B5,\"missing\",-1)",
+    "code": 0,
+    "out": "200.0",
+    "err": ""
+  },
+  {
+    "formula": "=XLOOKUP(25,A2:A5,B2:B5,\"missing\",1)",
+    "code": 0,
+    "out": "300.0",
+    "err": ""
+  },
+  {
+    "formula": "=XLOOKUP(20,A2:A5,B2:B5,\"missing\",0,-1)",
+    "code": 0,
+    "out": "250.0",
+    "err": ""
+  },
+  {
+    "formula": "=XLOOKUP(20,A2:A5,B2:B5,\"missing\",0,2)",
+    "code": 0,
+    "out": "200.0",
+    "err": ""
+  },
+  {
+    "formula": "=XLOOKUP(20,A2:A5,B2:B4)",
+    "code": 0,
+    "out": "{\"error\":\"#VALUE!\"}",
+    "err": ""
+  },
+  {
+    "formula": "=XLOOKUP(20,A2:A5,B2:B5,\"missing\",7)",
+    "code": 0,
+    "out": "{\"error\":\"#VALUE!\"}",
+    "err": ""
+  },
+  {
+    "formula": "=XLOOKUP(20,A2:A5,B2:B5,\"missing\",0,7)",
+    "code": 0,
+    "out": "{\"error\":\"#VALUE!\"}",
+    "err": ""
+  },
+  {
+    "formula": "=VLOOKUP(20,A2:B5)",
+    "code": 1,
+    "out": "",
+    "err": "gridcraft-cli: VLOOKUP has too few arguments. Use VLOOKUP(lookup_value, table_array, col_index_num, [range_lookup])"
+  },
+  {
+    "formula": "=XLOOKUP(20,A2:A5)",
+    "code": 1,
+    "out": "",
+    "err": "gridcraft-cli: XLOOKUP has too few arguments. Use XLOOKUP(lookup_value, lookup_array, return_array, [if_not_found], [match_mode], [search_mode])"
+  }
+]

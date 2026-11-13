@@ -1,0 +1,5 @@
+{"command": "range.setValues", "params": {"range": "A1", "values": [["Region", "Product", "Revenue"], ["North", "Studio", 480], ["South", "Studio", 320], ["North", "Workshop", 240]]}}
+{"command": "insert.pivotTable", "params": {"source": "Sheet1!A1:C4", "name": "RevenueByRegion", "rows": ["Region"], "values": [{"field": "Revenue", "func": "sum"}]}}
+{"command": "sheet.read", "params": {}}
+{"command": "insert.pivotChart", "params": {"pivot": "RevenueByRegion", "type": "column", "title": "Revenue by region"}}
+{"command": "pivot.list", "params": {}}

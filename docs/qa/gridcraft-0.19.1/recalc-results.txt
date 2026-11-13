@@ -1,0 +1,13 @@
+{"command":"cell.set","result":{"cell":"A1","value":"2"}}
+{"command":"cell.set","result":{"cell":"B1","value":"6"}}
+{"command":"sheet.read","result":{"range":"A1:B1","sheet":"Sheet1","values":[[2.0,6.0]]}}
+{"command":"cell.set","result":{"cell":"A1","value":"5"}}
+{"command":"sheet.read","result":{"range":"A1:B1","sheet":"Sheet1","values":[[5.0,15.0]]}}
+{"command":"formulas.calculationOptions","result":{"iterative":false,"maxChange":0.001,"maxIterations":100,"mode":"Manual","precisionAsDisplayed":false}}
+{"command":"cell.set","result":{"cell":"A1","value":"7"}}
+{"command":"sheet.read","result":{"range":"A1:B1","sheet":"Sheet1","values":[[7.0,15.0]]}}
+{"command":"formulas.calculateNow","result":{"cells":1}}
+{"command":"sheet.read","result":{"range":"A1:B1","sheet":"Sheet1","values":[[7.0,21.0]]}}
+{"command":"cell.set","result":{"cell":"C1","value":"#CIRC!"}}
+{"command":"formulas.calculateNow","result":{"cells":2}}
+{"command":"sheet.read","result":{"range":"C1","sheet":"Sheet1","values":[[{"error":"#CIRC!"}]]}}

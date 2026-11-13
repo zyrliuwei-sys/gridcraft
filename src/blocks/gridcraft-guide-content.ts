@@ -1,6 +1,7 @@
 import { m } from '@/paraglide/messages.js';
 import { getLocale, locales } from '@/paraglide/runtime.js';
 import { getGridcraftSearchGuides } from '@/blocks/gridcraft-search-guide-content';
+import { getGridcraftTestedGuides } from '@/blocks/gridcraft-tested-guide-content';
 
 export {
   gridcraftGuideSlugs,
@@ -12,6 +13,7 @@ export function getGridcraftGuides(
 ) {
   const options = { locale };
   return [
+    ...getGridcraftTestedGuides(locale),
     ...getGridcraftSearchGuides(locale),
     {
       slug: 'getting-started',

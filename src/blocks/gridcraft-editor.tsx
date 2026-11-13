@@ -36,10 +36,12 @@ export function GridcraftEditor({ sample }: { sample?: EditorSample }) {
     const interval = window.setInterval(() => {
       try {
         const document = frame.current?.contentDocument;
-        const canvas =
-          document?.querySelector<HTMLCanvasElement>('#gridcraft_canvas');
+        const canvas = document?.querySelector<HTMLCanvasElement>(
+          '#gridcraft_canvas, canvas#main'
+        );
         const loading = document?.getElementById('gridcraft_loading');
-        // v0.7.0 removes this element only after WebRunner.start succeeds.
+        // Upstream removes this element only after WebRunner.start succeeds.
+        // Some renderer configurations use "main" for the initialized canvas.
         // A canvas alone exists in the static HTML, before WASM has started.
         if (loading?.textContent?.includes('GridCraft failed to start:')) {
           setStatus('error');

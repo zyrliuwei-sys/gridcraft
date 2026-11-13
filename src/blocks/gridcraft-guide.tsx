@@ -2,6 +2,7 @@ import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 
 import { Link } from '@/core/i18n/navigation';
 import { m } from '@/paraglide/messages.js';
+import { getLocale } from '@/paraglide/runtime.js';
 import { GridcraftFooter, GridcraftHeader } from '@/blocks/gridcraft-chrome';
 import {
   getGridcraftGuides,
@@ -16,6 +17,7 @@ import '@/styles/gridcraft-guide.css';
 
 export function GridcraftGuide({ guide }: { guide: GridcraftGuideContent }) {
   const article = 'sections' in guide ? guide : undefined;
+  const guidesHref = getLocale() === 'en' ? '/guides' : '/#learn';
   const allGuides = getGridcraftGuides();
   const related = article
     ? article.relatedSlugs.flatMap((slug) =>
@@ -33,7 +35,7 @@ export function GridcraftGuide({ guide }: { guide: GridcraftGuideContent }) {
           >
             <Link href="/">{m['gc.guides.home']()}</Link>
             <span>/</span>
-            <Link href="/#learn">{m['gc.home.nav.learn']()}</Link>
+            <Link href={guidesHref}>{m['gc.home.nav.learn']()}</Link>
             <span>/</span>
             <span>{guide.tag}</span>
           </nav>
@@ -89,7 +91,7 @@ export function GridcraftGuide({ guide }: { guide: GridcraftGuideContent }) {
                   </>
                 )}
               </nav>
-              <Link href="/#learn">
+              <Link href={guidesHref}>
                 <ArrowLeft size={13} />
                 {m['gc.guides.all']()}
               </Link>
@@ -136,7 +138,7 @@ export function GridcraftGuide({ guide }: { guide: GridcraftGuideContent }) {
                   <div className="gc-article-source">
                     <span>{m['gc.guides.source_label']()}</span>
                     <a
-                      href="https://github.com/storytold/gridcraft/tree/v0.7.0"
+                      href="https://github.com/storytold/gridcraft/tree/v0.19.1"
                       target="_blank"
                       rel="noopener noreferrer"
                     >

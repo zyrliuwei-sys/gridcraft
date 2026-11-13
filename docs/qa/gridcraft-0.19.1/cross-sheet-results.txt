@@ -1,0 +1,9 @@
+{"command":"cell.set","result":{"cell":"A1","value":"10"}}
+{"command":"home.insertSheet","result":{"index":1,"name":"Sheet2"}}
+{"command":"cell.set","result":{"cell":"A1","value":"20"}}
+{"command":"sheet.read","result":{"range":"A1","sheet":"Sheet2","values":[[20.0]]}}
+{"command":"sheet.activate","result":{"name":"Sheet1","sheet":0}}
+{"command":"cell.set","result":{"cell":"A1","value":"12"}}
+{"command":"sheet.read","result":{"range":"A1","sheet":"Sheet2","values":[[24.0]]}}
+{"command":"cell.set","result":{"cell":"B1","value":"=A1*3"}}
+{"command":"sheet.read","result":{"range":"A1:B1","sheet":"Sheet1","values":[[12.0,"=A1*3"]]}}

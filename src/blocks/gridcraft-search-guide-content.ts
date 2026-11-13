@@ -250,19 +250,19 @@ export function getGridcraftSearchGuides(
           },
           links: [
             {
-              href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/docs/file-format-parity.md',
+              href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/docs/file-format-parity.md',
               label: m[
                 'gc.search_guides.gridcraft_excel_compatibility.sections.3.links.0.label'
               ]({}, options),
             },
             {
-              href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/docs/xlsb-import.md',
+              href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/docs/xlsb-import.md',
               label: m[
                 'gc.search_guides.gridcraft_excel_compatibility.sections.3.links.1.label'
               ]({}, options),
             },
             {
-              href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/docs/ods-import.md',
+              href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/docs/ods-import.md',
               label: m[
                 'gc.search_guides.gridcraft_excel_compatibility.sections.3.links.2.label'
               ]({}, options),
@@ -411,13 +411,13 @@ export function getGridcraftSearchGuides(
       ],
       sources: [
         {
-          href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/docs/file-format-parity.md',
+          href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/docs/file-format-parity.md',
           label: m[
             'gc.search_guides.gridcraft_excel_compatibility.sources.0.label'
           ]({}, options),
         },
         {
-          href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/README.md',
+          href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/README.md',
           label: m[
             'gc.search_guides.gridcraft_excel_compatibility.sources.1.label'
           ]({}, options),
@@ -510,7 +510,7 @@ export function getGridcraftSearchGuides(
           },
           links: [
             {
-              href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/README.md',
+              href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/README.md',
               label: m[
                 'gc.search_guides.gridcraft_vs_excel.sections.0.links.0.label'
               ]({}, options),
@@ -582,7 +582,7 @@ export function getGridcraftSearchGuides(
           ],
           links: [
             {
-              href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/ROADMAP.md',
+              href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/ROADMAP.md',
               label: m[
                 'gc.search_guides.gridcraft_vs_excel.sections.2.links.0.label'
               ]({}, options),
@@ -799,14 +799,14 @@ export function getGridcraftSearchGuides(
       ],
       sources: [
         {
-          href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/README.md',
+          href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/README.md',
           label: m['gc.search_guides.gridcraft_vs_excel.sources.0.label'](
             {},
             options
           ),
         },
         {
-          href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/ROADMAP.md',
+          href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/ROADMAP.md',
           label: m['gc.search_guides.gridcraft_vs_excel.sources.1.label'](
             {},
             options
@@ -862,7 +862,7 @@ export function getGridcraftSearchGuides(
               ]({}, options),
             },
             {
-              href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/README.md',
+              href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/README.md',
               label: m[
                 'gc.search_guides.what_is_gridcraft.sections.0.links.1.label'
               ]({}, options),
@@ -1194,21 +1194,21 @@ export function getGridcraftSearchGuides(
       ],
       sources: [
         {
-          href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/README.md',
+          href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/README.md',
           label: m['gc.search_guides.what_is_gridcraft.sources.0.label'](
             {},
             options
           ),
         },
         {
-          href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/ROADMAP.md',
+          href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/ROADMAP.md',
           label: m['gc.search_guides.what_is_gridcraft.sources.1.label'](
             {},
             options
           ),
         },
         {
-          href: 'https://github.com/storytold/gridcraft/releases/tag/v0.7.0',
+          href: 'https://github.com/storytold/gridcraft/releases/tag/v0.19.1',
           label: m['gc.search_guides.what_is_gridcraft.sources.2.label'](
             {},
             options
@@ -1556,7 +1556,7 @@ export function getGridcraftSearchGuides(
       ],
       sources: [
         {
-          href: 'https://github.com/storytold/gridcraft/blob/v0.7.0/README.md',
+          href: 'https://github.com/storytold/gridcraft/blob/v0.19.1/README.md',
           label: m['gc.search_guides.gridcraft_online.sources.0.label'](
             {},
             options

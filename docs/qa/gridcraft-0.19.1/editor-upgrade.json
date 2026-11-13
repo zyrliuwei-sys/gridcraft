@@ -1,0 +1,193 @@
+{
+  "version": "0.19.1",
+  "date": "2026-11-13",
+  "upstreamFiles": 13,
+  "integrity": "Every installed file matches the official ZIP byte-for-byte; stale files removed.",
+  "checksumValidation": "Incorrect archive rejected before modifying the installed build.",
+  "ui": "Wrapper JSX, CSS, layout and entry points unchanged; version strings and renderer readiness selector updated.",
+  "roundTrip": {
+    "input": 21,
+    "formula": "=A1*2",
+    "before": 42,
+    "afterReopeningXlsx": 42,
+    "xlsxBytes": 4055
+  },
+  "productionSamples": [
+    {
+      "sample": "sales",
+      "title": "Quarterly Sales Dashboard",
+      "sheet": "Sales",
+      "cells": 67,
+      "charts": 2
+    },
+    {
+      "sample": "budget",
+      "title": "Household Budget",
+      "sheet": "Budget",
+      "cells": 61,
+      "charts": 1
+    },
+    {
+      "sample": "grades",
+      "title": "Gradebook",
+      "sheet": "Grades",
+      "cells": 63,
+      "charts": 0
+    }
+  ],
+  "routes": [
+    {
+      "path": "/",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/zh",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/editor",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/zh/editor",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/getting-started",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/zh/guides/getting-started",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/formulas",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/zh/guides/formulas",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/charts-and-pivots",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/zh/guides/charts-and-pivots",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/gridcraft-excel-compatibility",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/zh/guides/gridcraft-excel-compatibility",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/gridcraft-vs-excel",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/zh/guides/gridcraft-vs-excel",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/what-is-gridcraft",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/zh/guides/what-is-gridcraft",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/gridcraft-online",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/zh/guides/gridcraft-online",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/privacy-policy",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/terms-of-service",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/acceptable-use-policy",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/about",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/contact",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/vlookup-xlookup",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/pivot-table-tutorial",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/csv-import-export",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/formulas-not-recalculating",
+      "status": 200,
+      "oldVersion": false
+    },
+    {
+      "path": "/guides/large-spreadsheet-performance",
+      "status": 200,
+      "oldVersion": false
+    }
+  ],
+  "validation": [
+    "pnpm build passed",
+    "pnpm exec tsc --noEmit passed",
+    "WASM served as application/wasm; nested snippet served as JavaScript",
+    "29 sitemap pages returned 200 without the old release label"
+  ],
+  "previewNote": "Local node preview had unrelated auth-session HTTP 500 warnings because it was started without production database configuration; no editor page errors were observed.",
+  "remainingException": "Editor footer links were not added because the user explicitly limited this follow-up to version and embedded program changes, with interface unchanged."
+}

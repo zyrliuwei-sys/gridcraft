@@ -1,0 +1,9 @@
+{"command": "cell.set", "params": {"cell": "A1", "input": "10"}}
+{"command": "home.insertSheet", "params": {}}
+{"command": "cell.set", "params": {"cell": "A1", "input": "=Sheet1!A1*2"}}
+{"command": "sheet.read", "params": {"range": "A1"}}
+{"command": "sheet.activate", "params": {"sheet": "Sheet1"}}
+{"command": "cell.set", "params": {"cell": "A1", "input": "12"}}
+{"command": "sheet.read", "params": {"range": "A1", "sheet": "Sheet2"}}
+{"command": "cell.set", "params": {"cell": "B1", "input": "'=A1*3"}}
+{"command": "sheet.read", "params": {"range": "A1:B1"}}
