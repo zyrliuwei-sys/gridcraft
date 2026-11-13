@@ -22,6 +22,9 @@ export const envConfigs: Record<string, string> = {
     'GridCraft downloads, installation guides, Microsoft Excel feature comparisons and hands-on reviews.',
   app_logo: publicEnv('VITE_APP_LOGO') ?? '/logo.svg',
 
+  // Public publisher ID shared by the AdSense tags and /ads.txt.
+  adsense_code: 'ca-pub-2841223102464177',
+
   // Database
   database_url: procEnv.DATABASE_URL ?? '',
   database_auth_token: procEnv.DATABASE_AUTH_TOKEN ?? '',

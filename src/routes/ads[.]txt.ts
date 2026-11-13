@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 
+import { envConfigs } from '@/config';
 import { getConfig } from '@/modules/config/service';
 
 export const Route = createFileRoute('/ads.txt')({
@@ -8,13 +9,12 @@ export const Route = createFileRoute('/ads.txt')({
       GET: async () => {
         // The publisher ID carries a "ca-" prefix in the AdSense UI, but
         // ads.txt wants the bare "pub-…" form.
-        const code = (await getConfig('adsense_code'))?.trim() || '';
+        const code =
+          (await getConfig('adsense_code'))?.trim() || envConfigs.adsense_code;
         const pubId = code.replace(/^ca-/, '');
-        const body = pubId
-          ? `google.com, ${pubId}, DIRECT, f08c47fec0942fa0\n`
-          : '';
+        const body = `google.com, ${pubId}, DIRECT, f08c47fec0942fa0`;
         return new Response(body, {
-          headers: { 'Content-Type': 'text/plain' },
+          headers: { 'Content-Type': 'text/plain; charset=utf-8' },
         });
       },
     },
