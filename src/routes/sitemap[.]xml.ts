@@ -8,6 +8,7 @@ import {
   gridcraftTestedGuideSlugs,
 } from '@/lib/gridcraft-guides';
 import { baseLocale, locales, localizeUrl } from '@/paraglide/runtime.js';
+import { getLocalPosts, isPublishedBlogPost } from '@/content/posts';
 
 const STATIC_PATHS = [
   '',
@@ -97,27 +98,29 @@ export const Route = createFileRoute('/sitemap.xml')({
 
         // Only published project articles belong in the sitemap. The bundled
         // ShipAny tutorial posts are demo content and carry noindex.
-        try {
-          const { listPublishedArticles } =
-            await import('@/modules/posts/service');
-          const rows = await listPublishedArticles().catch(() => []);
-          if (rows.length > 0) {
-            entries.push({
-              path: '/blog',
-              changeFrequency: 'weekly',
-              priority: 0.7,
-            });
-          }
-          for (const post of rows) {
-            entries.push({
-              path: `/blog/${post.slug}`,
-              lastModified: new Date(post.createdAt).toISOString(),
-              changeFrequency: 'monthly',
-              priority: 0.6,
-            });
-          }
-        } catch {
-          // Database unreachable — keep the static project pages.
+        const dbPosts = await import('@/modules/posts/service')
+          .then(({ listPublishedArticles }) => listPublishedArticles())
+          .catch(() => []);
+        const dbSlugs = new Set(dbPosts.map((post) => post.slug));
+        const localPosts = getLocalPosts(baseLocale).filter(
+          (post) => isPublishedBlogPost(post) && !dbSlugs.has(post.slug)
+        );
+        if (dbPosts.length || localPosts.length) {
+          entries.push({
+            path: '/blog',
+            languages: dbPosts.length ? locales : [baseLocale],
+            changeFrequency: 'weekly',
+            priority: 0.7,
+          });
+        }
+        for (const post of [...dbPosts, ...localPosts]) {
+          entries.push({
+            path: `/blog/${post.slug}`,
+            languages: dbSlugs.has(post.slug) ? locales : [baseLocale],
+            lastModified: new Date(post.createdAt).toISOString(),
+            changeFrequency: 'monthly',
+            priority: 0.6,
+          });
         }
 
         const xml = [

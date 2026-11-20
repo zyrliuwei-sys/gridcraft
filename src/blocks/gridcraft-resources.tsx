@@ -11,6 +11,7 @@ import {
 
 import { Link } from '@/core/i18n/navigation';
 import { m } from '@/paraglide/messages.js';
+import { getLocale } from '@/paraglide/runtime.js';
 import { getGridcraftSearchGuideCards } from '@/blocks/gridcraft-search-guide-content';
 import { getGridcraftTestedGuideCards } from '@/blocks/gridcraft-tested-guide-content';
 import { GridcraftGuideList } from '@/components/gridcraft-guide-list';
@@ -279,6 +280,15 @@ export function GridcraftResources() {
             </div>
             <p>{m['gc.resources.learn.description']()}</p>
           </div>
+          {getLocale() === 'en' && (
+            <Link
+              className="gc-resource-textlink"
+              href="/blog/gridcraft-artcraft"
+            >
+              {m['gc.site.artcraft_blog_link']()}
+              <ArrowRight size={15} />
+            </Link>
+          )}
           <h3 className="gc-learn-subheading">
             {m['gc.resources.learn.featured']()}
           </h3>

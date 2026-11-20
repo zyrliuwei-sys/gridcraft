@@ -11,9 +11,12 @@ import { baseLocale } from '@/paraglide/runtime.js';
  * fetched through the server functions in ./server.ts and merged with the
  * local posts via the pure helpers below.
  */
+const PUBLISHED_ENGLISH_POST_SLUGS = ['gridcraft-artcraft'] as const;
+
 export const BLOG_POST_SLUGS = [
   'what-is-shipany',
   'blocks-vs-components',
+  ...PUBLISHED_ENGLISH_POST_SLUGS,
 ] as const;
 
 export type BlogPostMeta = {
@@ -53,10 +56,19 @@ const postModules = import.meta.glob<PostModule>('/src/content/posts/*.mdx', {
   eager: true,
 });
 
+function isPublishedEnglishPost(slug: string) {
+  return PUBLISHED_ENGLISH_POST_SLUGS.some((published) => published === slug);
+}
+
+export function isPublishedBlogPost(post: BlogPost) {
+  return post.source === 'db' || isPublishedEnglishPost(post.slug);
+}
+
 export function loadLocalPost(slug: string, locale: string): PostModule | null {
   if (!BLOG_POST_SLUGS.includes(slug as (typeof BLOG_POST_SLUGS)[number])) {
     return null;
   }
+  if (locale !== baseLocale && isPublishedEnglishPost(slug)) return null;
   return (
     postModules[`/src/content/posts/${slug}.${locale}.mdx`] ??
     postModules[`/src/content/posts/${slug}.${baseLocale}.mdx`] ??

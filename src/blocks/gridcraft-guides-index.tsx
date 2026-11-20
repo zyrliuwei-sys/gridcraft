@@ -1,3 +1,6 @@
+import { ArrowRight } from 'lucide-react';
+
+import { Link } from '@/core/i18n/navigation';
 import { m } from '@/paraglide/messages.js';
 import { GridcraftFooter, GridcraftHeader } from '@/blocks/gridcraft-chrome';
 import { getGridcraftGuides } from '@/blocks/gridcraft-guide-content';
@@ -14,6 +17,10 @@ export function GridcraftGuidesIndex() {
           <h1>{m['gc.site.guides_title']()}</h1>
           <p>{m['gc.site.guides_description']()}</p>
         </header>
+        <Link className="gc-resource-textlink" href="/blog/gridcraft-artcraft">
+          {m['gc.site.artcraft_blog_link']()}
+          <ArrowRight size={15} />
+        </Link>
         <section aria-labelledby="gc-guide-library-title">
           <h2 id="gc-guide-library-title" className="gc-learn-subheading">
             {m['gc.site.guides']()}

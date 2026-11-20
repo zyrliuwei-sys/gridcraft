@@ -2,6 +2,7 @@ import { createServerFn } from '@tanstack/react-start';
 
 import {
   getLocalPosts,
+  isPublishedBlogPost,
   loadLocalPost,
   mergePosts,
   type BlogPost,
@@ -39,9 +40,13 @@ export const getBlogPostsFn = createServerFn()
   .inputValidator((data: { locale: string; limit?: number }) => data)
   .handler(async ({ data }) => {
     const dbPosts = await getDbPosts();
-    return mergePosts(dbPosts, getLocalPosts(data.locale), {
-      limit: data.limit,
-    });
+    return mergePosts(
+      dbPosts,
+      getLocalPosts(data.locale).filter(isPublishedBlogPost),
+      {
+        limit: data.limit,
+      }
+    );
   });
 
 /**

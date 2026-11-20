@@ -10,7 +10,11 @@ import { Footer } from '@/blocks/footer';
 import { Header } from '@/blocks/header';
 import { MarkdownContent } from '@/components/markdown-content';
 import { mdxComponents } from '@/components/mdx-components';
-import { formatPostDate, loadLocalPost } from '@/content/posts';
+import {
+  formatPostDate,
+  isPublishedBlogPost,
+  loadLocalPost,
+} from '@/content/posts';
 import { getBlogPostFn } from '@/content/posts/server';
 
 export const Route = createFileRoute('/blog/$slug')({
@@ -32,7 +36,7 @@ export const Route = createFileRoute('/blog/$slug')({
       meta: [
         { title: `${post.title} | ${envConfigs.app_name}` },
         { name: 'description', content: post.description },
-        ...(post.source === 'local'
+        ...(!isPublishedBlogPost(post)
           ? [{ name: 'robots', content: 'noindex,follow' }]
           : []),
       ],

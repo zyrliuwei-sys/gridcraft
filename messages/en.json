@@ -1328,6 +1328,7 @@
   "gc.resources.faq.macros.q": "Will my VBA macros run?",
   "gc.resources.faq.macros.a": "No. GridCraft does not support VBA macros. Keep macro-dependent workbooks in a tool that supports them, such as desktop Microsoft Excel.",
   "gc.story.title": "Your GridCraft ArtCraft guide.",
+  "gc.site.artcraft_blog_link": "GridCraft and ArtCraft: who makes it and where to get it",
   "gc.story.intro": "GridCraft is the spreadsheet application from ArtCraft, an open-source software studio. Written in Rust, it combines an Excel-style ribbon, worksheet tabs and a formula bar with a calculation engine that runs on desktop computers and in the browser through WebAssembly.",
   "gc.story.context": "Think of it as another place to explore a workbook, rather than a promise that every Excel feature will behave identically. It is useful to try a household budget, a class gradebook or a sales summary and see how the workflow feels. This independent site brings together the official browser build, practical tutorials and direct release links. The software comes from ArtCraft; the guidance and website are maintained separately.",
   "gc.story.open.title": "Open an XLSX. Keep the original.",

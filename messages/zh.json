@@ -1328,6 +1328,7 @@
   "gc.resources.faq.macros.q": "VBA 宏可以运行吗？",
   "gc.resources.faq.macros.a": "不能。GridCraft 不支持 VBA 宏。依赖宏的工作簿请继续使用支持 VBA 的工具，例如桌面版 Microsoft Excel。",
   "gc.story.title": "你的 GridCraft ArtCraft 指南。",
+  "gc.site.artcraft_blog_link": "GridCraft 与 ArtCraft：开发者与官方下载渠道",
   "gc.story.intro": "GridCraft 是开源软件工作室 ArtCraft 开发的电子表格应用。它用 Rust 编写，将类似 Excel 的功能区、工作表标签和公式栏，与可在桌面和浏览器 WebAssembly 中运行的计算引擎结合。",
   "gc.story.context": "可以把它看作探索工作簿的另一种选择，而非所有 Excel 功能都完全一致的承诺。用家庭预算、班级成绩册或销售汇总试一试，就能判断工作流程是否适合你。这个独立网站汇集官方浏览器版本、实用教程和直接下载链接。软件由 ArtCraft 开发，本站内容与指南独立维护。",
   "gc.story.open.title": "打开 XLSX，保留原文件。",
