@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { createFileRoute, Outlet } from '@tanstack/react-router';
 import {
   BadgeCheck,
@@ -5,21 +6,59 @@ import {
   FolderOpen,
   Home,
   LayoutDashboard,
+  LogOut,
   Radar,
   Settings,
   Shield,
   TrendingUp,
 } from 'lucide-react';
+import { toast } from 'sonner';
 
+import { signOut } from '@/core/auth/client';
 import { envConfigs } from '@/config';
 import { m } from '@/paraglide/messages.js';
+import { localizeHref } from '@/paraglide/runtime.js';
 import { useUserPermissions } from '@/hooks/use-user-permissions';
 import { AppLayout } from '@/components/app-layout';
+import { Button } from '@/components/ui/button';
 
 export const Route = createFileRoute('/admin')({
   head: () => ({ meta: [{ name: 'robots', content: 'noindex,nofollow' }] }),
   component: AdminLayout,
 });
+
+function AdminSignOut() {
+  const [pending, setPending] = useState(false);
+
+  async function handleSignOut() {
+    setPending(true);
+    try {
+      const { error } = await signOut();
+      if (error) {
+        toast.error(m['common.error.message']());
+        return;
+      }
+      window.location.replace(localizeHref('/'));
+    } catch {
+      toast.error(m['common.error.message']());
+    } finally {
+      setPending(false);
+    }
+  }
+
+  return (
+    <Button
+      type="button"
+      variant="outline"
+      size="sm"
+      disabled={pending}
+      onClick={handleSignOut}
+    >
+      <LogOut aria-hidden="true" />
+      {m['common.sign.sign_out_title']()}
+    </Button>
+  );
+}
 
 function AdminLayout() {
   const group = m['common.systems.admin']();
@@ -104,6 +143,7 @@ function AdminLayout() {
       footerNavItems={footerNavItems}
       brand={envConfigs.app_name}
       brandHref="/admin"
+      headerExtra={<AdminSignOut />}
       profileHref="/settings/profile"
       requirePermission="admin.*"
     >

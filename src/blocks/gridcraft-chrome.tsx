@@ -24,7 +24,6 @@ export function GridcraftHeader({ home = false }: { home?: boolean }) {
           { href: '/contact', label: m['gc.site.contact']() },
         ]
       : []),
-    { href: '/admin', label: m['gc.home.nav.admin']() },
   ];
   return (
     <header className="gc-header">
@@ -42,8 +41,18 @@ export function GridcraftHeader({ home = false }: { home?: boolean }) {
             {item.label}
           </Link>
         ))}
+        <Link
+          href="/editor"
+          className="gc-nav-mobile-editor"
+          onClick={() => setOpen(false)}
+        >
+          {m['gc.home.start']()}
+        </Link>
       </nav>
       <div className="gc-header-actions">
+        <Link href="/admin" className="gc-login">
+          {m['gc.home.nav.admin']()}
+        </Link>
         <Link href="/editor" className="gc-nav-cta">
           {m['gc.home.start']()}
           <ArrowUpRight size={15} />
