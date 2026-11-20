@@ -24,6 +24,7 @@ export function GridcraftHeader({ home = false }: { home?: boolean }) {
           { href: '/contact', label: m['gc.site.contact']() },
         ]
       : []),
+    { href: '/admin', label: m['gc.home.nav.admin']() },
   ];
   return (
     <header className="gc-header">
