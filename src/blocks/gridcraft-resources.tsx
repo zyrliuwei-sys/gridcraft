@@ -11,7 +11,7 @@ import {
 
 import { Link } from '@/core/i18n/navigation';
 import { m } from '@/paraglide/messages.js';
-import { getLocale } from '@/paraglide/runtime.js';
+import { getLocale, localizeHref } from '@/paraglide/runtime.js';
 import { getGridcraftSearchGuideCards } from '@/blocks/gridcraft-search-guide-content';
 import { getGridcraftTestedGuideCards } from '@/blocks/gridcraft-tested-guide-content';
 import { GridcraftGuideList } from '@/components/gridcraft-guide-list';
@@ -70,6 +70,7 @@ function GuideCard({ guide }: { guide: Guide }) {
 export function GridcraftResources() {
   const [filter, setFilter] = useState('all');
   const [platform, setPlatform] = useState<Platform>('mac');
+  const BlogLink = getLocale() === 'en' ? Link : 'a';
   const guides: Guide[] = [
     {
       id: 'start',
@@ -280,15 +281,29 @@ export function GridcraftResources() {
             </div>
             <p>{m['gc.resources.learn.description']()}</p>
           </div>
-          {getLocale() === 'en' && (
-            <Link
-              className="gc-resource-textlink"
-              href="/blog/gridcraft-artcraft"
-            >
-              {m['gc.site.artcraft_blog_link']()}
-              <ArrowRight size={15} />
-            </Link>
-          )}
+          <BlogLink
+            id="artcraft-blog"
+            className="gc-blog-feature"
+            href={localizeHref('/blog/gridcraft-artcraft', { locale: 'en' })}
+            hrefLang="en"
+          >
+            <img
+              src="/imgs/gridcraft/hero.webp"
+              alt=""
+              width="1600"
+              height="1000"
+              loading="lazy"
+              decoding="async"
+            />
+            <div className="gc-blog-feature-copy">
+              <span className="gc-blog-feature-label">{m['blog.title']()}</span>
+              <h3>{m['gc.site.artcraft_blog_link']()}</h3>
+              <span className="gc-guide-read">
+                {m['blog.read_more']()}
+                <ArrowRight size={15} aria-hidden="true" />
+              </span>
+            </div>
+          </BlogLink>
           <h3 className="gc-learn-subheading">
             {m['gc.resources.learn.featured']()}
           </h3>

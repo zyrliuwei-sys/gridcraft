@@ -4,7 +4,7 @@ import { ArrowUp, ArrowUpRight, Menu, X } from 'lucide-react';
 import { Link } from '@/core/i18n/navigation';
 import { envConfigs } from '@/config';
 import { m } from '@/paraglide/messages.js';
-import { getLocale } from '@/paraglide/runtime.js';
+import { getLocale, localizeHref } from '@/paraglide/runtime.js';
 import { FooterBadgeList } from '@/components/footer-badge-list';
 
 import '@/styles/gridcraft-home.css';
@@ -13,6 +13,7 @@ import '@/styles/gridcraft-footer.css';
 export function GridcraftHeader({ home = false }: { home?: boolean }) {
   const [open, setOpen] = useState(false);
   const english = getLocale() === 'en';
+  const BlogLink = english ? Link : 'a';
   const items = [
     { href: `${home ? '' : '/'}#features`, label: m['gc.home.nav.product']() },
     { href: `${home ? '' : '/'}#learn`, label: m['gc.home.nav.learn']() },
@@ -41,6 +42,13 @@ export function GridcraftHeader({ home = false }: { home?: boolean }) {
             {item.label}
           </Link>
         ))}
+        <BlogLink
+          href={localizeHref('/blog', { locale: 'en' })}
+          hrefLang="en"
+          onClick={() => setOpen(false)}
+        >
+          {m['blog.title']()}
+        </BlogLink>
         <Link
           href="/editor"
           className="gc-nav-mobile-editor"
